@@ -84,47 +84,59 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #000;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #d1242f;
+  --destructive-foreground: #fafafa;
+  --warning: #d1aa24;
+  --warning-foreground: #070907;
+  --border: #222225;
+  --border-muted: #232324;
+  --input: #27272a;
+  --ring: #d4d4d8;
+  --danger: #d1242f;
+  --sidebar-background: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+  --sidebar-drag-pill: #232226;
+  --sidebar: #18181b;
+  --brand: #2e1b9c;
+  --brand-foreground: #fff;
+  --brand-text: #556af3;
+  --venom-gradient: linear-gradient(135deg, oklch(78% .26 135) 0%, oklch(58% .245 145) 100%);
+  --venom-gradient-soft: linear-gradient(135deg, oklch(84% .23 135) 0%, oklch(62% .24 145) 100%);
+  --venom-glow: 0 0 24px oklch(78% .26 140 / .35);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    background-color: #000;
+    color: #fafafa;
   }
   html {
     @apply font-sans;
   }
+}
+
+
+/* Hide scrollbar on drag-scroll tab bars (webkit) */
+[data-drag-scroll="true"]::-webkit-scrollbar {
+  display: none;
 }
