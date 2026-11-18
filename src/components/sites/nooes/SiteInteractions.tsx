@@ -302,32 +302,11 @@ export default function SiteInteractions() {
               Desktop App
             </Link>
             <Link
-              href="/models"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
-            >
-              Models
-            </Link>
-            <Link
-              href="/skills"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
-            >
-              Skills
-            </Link>
-            <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
               className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
             >
               About
-            </Link>
-            <Link
-              href="/why"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
-            >
-              Why Nooes
             </Link>
             <Link
               href="/changelog"
@@ -342,13 +321,6 @@ export default function SiteInteractions() {
               className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
             >
               Contact
-            </Link>
-            <Link
-              href="/blog"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
-            >
-              Blog
             </Link>
             <a
               href="https://nooes.ai/docs"

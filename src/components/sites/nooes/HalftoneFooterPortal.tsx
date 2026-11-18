@@ -39,7 +39,6 @@ export default function HalftoneFooterPortal() {
               { label: 'Features', href: '/features' },
               { label: 'Pricing', href: '/pricing' },
               { label: 'Desktop App', href: '/desktop' },
-              { label: 'Models', href: '/models' },
             ],
           },
           {
@@ -47,15 +46,12 @@ export default function HalftoneFooterPortal() {
             links: [
               { label: 'Docs', href: '/docs' },
               { label: 'Changelog', href: '/changelog' },
-              { label: 'Skills', href: '/skills' },
-              { label: 'Learn', href: '/learn' },
             ],
           },
           {
             title: 'Company',
             links: [
               { label: 'About', href: '/about' },
-              { label: 'Blog', href: '/blog' },
               { label: 'Careers', href: '/careers' },
               { label: 'Contact', href: '/contact' },
             ],
