@@ -23,7 +23,7 @@ export function DocsContent({ page }: DocsContentProps) {
   const prevPage = currentIndex > 0 ? allNavItems[currentIndex - 1] : null;
   const nextPage = currentIndex < allNavItems.length - 1 ? allNavItems[currentIndex + 1] : null;
 
-  // Render markdown blocks with Command Code signature styling
+  // Render markdown blocks
   const renderedContent = React.useMemo(() => {
     const raw = page.content.trim();
     const blocks = raw.split("\n\n");
@@ -88,7 +88,7 @@ export function DocsContent({ page }: DocsContentProps) {
         return <CodeBlock key={idx} code={code} language={lang} />;
       }
 
-      // Callouts / Alerts with Command Code dashed styling
+      // Callouts / Alerts with dashed styling
       if (trimmed.startsWith("> [!NOTE]")) {
         const body = trimmed.replace(/^>\s*\[!NOTE\]\s*/i, "").replace(/^>\s*/gm, "");
         return (
@@ -129,7 +129,7 @@ export function DocsContent({ page }: DocsContentProps) {
         );
       }
 
-      // Markdown Tables with Command Code dashed grid borders
+      // Markdown Tables with dashed grid borders
       if (trimmed.startsWith("|")) {
         const rows = trimmed.split("\n").filter((r) => !r.includes("---"));
         const header = rows[0].split("|").filter(Boolean).map((s) => s.trim());
