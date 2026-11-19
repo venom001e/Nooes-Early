@@ -587,9 +587,9 @@ Nooes respects developer privacy and avoids invasive tracking. To disable all an
 
 Because your data lives locally, deleting your local config directory (\`~/.config/nooes\`) instantly purges all local keys, chat logs, and preferences. For cloud-held contact requests or share link removals, email **privacy@nooes.dev**.
 
-## Open Source License
+## Software License
 
-Nooes is licensed under the permissive **MIT License**, guaranteeing your freedom to inspect, audit, modify, and build commercial software without vendor lock-in.
+Nooes is proprietary software.
 `,
   },
 
@@ -627,13 +627,13 @@ Yes! Nooes supports sign-ins for select developer accounts such as GitHub Copilo
 No. Nooes provides a terminal interface, a standalone desktop app for macOS, Windows, and Linux, and native extensions for VS Code, Cursor, and JetBrains.
 
 ### How much does Nooes cost?
-Nooes itself is free and open-source. You only pay your respective model provider for any direct API token usage you incur.
+Nooes is proprietary software. You only pay your respective model provider for any direct API token usage you incur.
 
 ### What about data and privacy?
 Nooes is local-first. We do not store, train on, or upload your proprietary source code to any central server. See [Privacy and Data](/docs/privacy).
 
 ### Where is the source code?
-Nooes source code is available on [GitHub](https://github.com/nooes-ai/nooes) under the MIT License.
+Nooes is proprietary software.
 `,
   },
 };

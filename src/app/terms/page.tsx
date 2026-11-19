@@ -94,7 +94,7 @@ export default function TermsPage() {
                 Last updated: November 12, 2026
               </p>
               <div className="mt-4 p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm text-zinc-400 leading-relaxed font-mono">
-                <span className="text-white font-semibold">Notice:</span> Nooes is free, open-source software distributed under the permissive MIT License. These terms govern your use of the Nooes CLI, desktop application, share services, and web portal. Please have legal counsel review before commercial deployment.
+                <span className="text-white font-semibold">Notice:</span> Nooes is proprietary software. These terms govern your use of the Nooes desktop application, share services, and web portal. Please have legal counsel review before commercial deployment.
               </div>
             </div>
 
@@ -105,7 +105,7 @@ export default function TermsPage() {
               </h2>
               <ol className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-mono text-zinc-400">
                 <li><a href="#acceptance" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">01.</span> Acceptance &amp; Eligibility</a></li>
-                <li><a href="#software-license" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">02.</span> Open-Source Software &amp; MIT License</a></li>
+                <li><a href="#software-license" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">02.</span> The Software</a></li>
                 <li><a href="#your-code" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">03.</span> Your Content &amp; Your Code</a></li>
                 <li><a href="#model-providers" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">04.</span> Third-Party Model Providers &amp; Keys</a></li>
                 <li><a href="#ai-output-disclaimer" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">05.</span> AI Output Disclaimer</a></li>
@@ -138,22 +138,11 @@ export default function TermsPage() {
               {/* 02. The software */}
               <section id="software-license" className="scroll-mt-32 pt-6 border-t border-border">
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
-                  <span className="text-zinc-600">// 02</span> Open-Source Software &amp; MIT License
+                  <span className="text-zinc-600">// 02</span> The Software
                 </h2>
                 <p className="mb-3">
-                  Nooes is free software distributed as open source under the permissive <strong className="text-white">MIT License</strong>. You can inspect, audit, fork, customize, compile, and run it for personal and commercial purposes.
+                  [FILL: software license terms, to be written by a lawyer]
                 </p>
-                <div className="p-4 rounded border border-border bg-zinc-950 font-mono text-xs text-zinc-400 flex items-center justify-between">
-                  <span>View the official open-source license file in our repository:</span>
-                  <a 
-                    href="https://github.com/nooes-ai/nooes/blob/main/LICENSE" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white underline hover:text-zinc-300 ml-2 shrink-0"
-                  >
-                    LICENSE &rarr;
-                  </a>
-                </div>
               </section>
 
               {/* 03. Your content and your code */}
@@ -233,7 +222,7 @@ export default function TermsPage() {
                   <span className="text-zinc-600">// 08</span> Trademarks &amp; Brand Assets
                 </h2>
                 <p className="mb-3">
-                  While the underlying software code is licensed under the MIT License, the &ldquo;Nooes&rdquo; name, logo, iconography, wordmarks, and trade dress are proprietary trademarks.
+                  The &ldquo;Nooes&rdquo; name, logo, iconography, wordmarks, and trade dress are proprietary trademarks.
                 </p>
                 <p className="text-sm text-zinc-400">
                   You may not use our brand marks to imply official endorsement or sponsorship of third-party products without written authorization. For guidelines on proper usage, review our <Link href="/brand" className="text-white underline hover:text-zinc-400">Brand Guidelines</Link>.
@@ -261,7 +250,7 @@ export default function TermsPage() {
                   <span className="text-zinc-600">// 10</span> Termination of Hosted Access
                 </h2>
                 <p className="text-zinc-400">
-                  Because Nooes is open source, you retain perpetual right to run the local code under the MIT License. However, we reserve the right to suspend, terminate, or restrict access to hosted services (including share link rendering, free relays, and download portals) for any user or IP address found abusing our infrastructure or violating these Terms.
+                  We reserve the right to suspend, terminate, or restrict access to hosted services (including share link rendering, free relays, and download portals) for any user or IP address found abusing our infrastructure or violating these Terms. Access to the local desktop application is governed by the applicable software license.
                 </p>
               </section>
 
@@ -271,7 +260,7 @@ export default function TermsPage() {
                   <span className="text-zinc-600">// 11</span> Governing Law &amp; Dispute Resolution
                 </h2>
                 <p className="text-zinc-400">
-                  These Terms are governed by and construed in accordance with the laws of California, United States [FILL: Country and State], without regard to conflict of law principles. Any dispute arising from these terms or hosted services shall be resolved through good-faith negotiation, or submitted to the competent courts of San Francisco, California [FILL].
+                  These Terms are governed by and construed in accordance with the laws of [FILL: governing law — country and state], without regard to conflict of law principles. Any dispute arising from these terms or hosted services shall be resolved through good-faith negotiation, or submitted to the competent courts of [FILL: jurisdiction].
                 </p>
               </section>
 
@@ -281,7 +270,7 @@ export default function TermsPage() {
                   <span className="text-zinc-600">// 12</span> Changes &amp; Contact Information
                 </h2>
                 <p className="mb-4">
-                  We may periodically revise these Terms of Service. Notice of substantive updates will be reflected in the &ldquo;Last updated&rdquo; timestamp and announced via our GitHub repository releases.
+                  We may periodically revise these Terms of Service. Notice of substantive updates will be reflected in the &ldquo;Last updated&rdquo; timestamp at the top of this page.
                 </p>
                 <div className="p-4 rounded border border-border bg-zinc-950 font-mono text-xs sm:text-sm space-y-2 text-zinc-400">
                   <p><span className="text-zinc-600">Legal Inquiries:</span> <a href="mailto:legal@nooes.dev" className="text-white underline hover:text-zinc-400">legal@nooes.dev</a></p>

@@ -381,7 +381,7 @@ export function DocsLayout({ children, activePage }: DocsLayoutProps) {
             <footer className="mt-auto border-t border-dashed border-border bg-background p-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 font-mono">
                 <Terminal className="size-4 text-brand-text" />
-                <span>Nooes Documentation · MIT License</span>
+                <span>Nooes Documentation</span>
               </div>
               <div className="flex items-center gap-4">
                 <Link href="/privacy" className="hover:text-foreground transition-colors">

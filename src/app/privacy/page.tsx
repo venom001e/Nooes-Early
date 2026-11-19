@@ -129,7 +129,7 @@ export default function PrivacyPage() {
                 </p>
                 <div className="p-4 rounded border border-border bg-zinc-950 font-mono text-xs text-zinc-400 space-y-1">
                   <p><span className="text-zinc-600">Organization:</span> Nooes Development Team [FILL: Entity Name]</p>
-                  <p><span className="text-zinc-600">Mailing Address:</span> 2261 Market St #5698, San Francisco, CA 94114 [FILL]</p>
+                  <p><span className="text-zinc-600">Mailing Address:</span> [FILL: company address]</p>
                   <p><span className="text-zinc-600">Privacy Officer:</span> <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a> [FILL]</p>
                 </div>
               </section>
