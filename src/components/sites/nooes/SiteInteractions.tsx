@@ -100,7 +100,7 @@ export default function SiteInteractions() {
     // 5. Features page tab switcher
     const TAB_MAP: Record<string, string> = {
       'cli experience':       'cli-experience',
-      'taste learning':       'taste',
+      
       'run modes':            'modes',
       'code tools':           'tools',
       'mcp & skills':         'mcp',

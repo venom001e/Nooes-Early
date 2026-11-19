@@ -17,14 +17,14 @@ interface FeatureTab {
 const tabs: FeatureTab[] = [
   {
     num: '01',
-    title: 'Your coding taste',
-    code: '`npx taste`',
-    href: '/features#taste',
+    title: 'Project rules & standards',
+    code: '`nooes rules`',
+    href: '/features',
     rightTitle: 'Always learning.',
     rightDesc: 'Every accept, reject, and edit is a signal — auto-generates into project-level skills.',
     commands: [
       {
-        input: 'npx taste',
+        input: 'nooes rules',
         runDelayMs: 500,
         output: [
           { text: 'Scanning project architecture and dependencies...', tone: 'muted' },
@@ -32,7 +32,7 @@ const tabs: FeatureTab[] = [
           { text: '  - Styles: Tailwind CSS v4, oklch design tokens', tone: 'muted' },
           { text: '  - Language: TypeScript strict, React 19', tone: 'muted' },
           { text: '✔ Indexed 148 files. AST & conventions learned.', tone: 'success' },
-          { text: 'Ready to pair LLMs with your coding taste.', tone: 'info' },
+          { text: 'Ready to pair LLMs with your coding standards.', tone: 'info' },
         ],
       },
     ],
@@ -120,10 +120,10 @@ const tabs: FeatureTab[] = [
   },
   {
     num: '06',
-    title: 'Collaborate /share sessions, npx taste push/pull',
+    title: 'Collaborate /share sessions, nooes rules push/pull',
     href: '/features#collab',
     rightTitle: 'Even better, together.',
-    rightDesc: '/share sessions. npx taste push/pull. Taste, across teams.',
+    rightDesc: '/share sessions. nooes rules push/pull. Workflows, across teams.',
     commands: [
       {
         input: 'nooes sync --live',
