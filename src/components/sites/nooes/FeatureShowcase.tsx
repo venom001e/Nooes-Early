@@ -17,28 +17,6 @@ interface FeatureTab {
 const tabs: FeatureTab[] = [
   {
     num: '01',
-    title: 'Project rules & standards',
-    code: '`nooes rules`',
-    href: '/features',
-    rightTitle: 'Always learning.',
-    rightDesc: 'Every accept, reject, and edit is a signal — auto-generates into project-level skills.',
-    commands: [
-      {
-        input: 'nooes rules',
-        runDelayMs: 500,
-        output: [
-          { text: 'Scanning project architecture and dependencies...', tone: 'muted' },
-          { text: '  - Framework: Next.js 16 (Turbopack, App Router)', tone: 'muted' },
-          { text: '  - Styles: Tailwind CSS v4, oklch design tokens', tone: 'muted' },
-          { text: '  - Language: TypeScript strict, React 19', tone: 'muted' },
-          { text: '✔ Indexed 148 files. AST & conventions learned.', tone: 'success' },
-          { text: 'Ready to pair LLMs with your coding standards.', tone: 'info' },
-        ],
-      },
-    ],
-  },
-  {
-    num: '02',
     title: 'Interactive, headless, sandbox agents',
     href: '/features#modes',
     rightTitle: 'A mode for every moment.',
@@ -58,7 +36,7 @@ const tabs: FeatureTab[] = [
     ],
   },
   {
-    num: '03',
+    num: '02',
     title: 'Skills, reviews, bundled agentic tools',
     href: '/features#tools',
     rightTitle: 'Best in class tools. Built in.',
@@ -78,7 +56,7 @@ const tabs: FeatureTab[] = [
     ],
   },
   {
-    num: '04',
+    num: '03',
     title: 'Context engineering with /agents, /memory',
     href: '/features#memory',
     rightTitle: "It remembers. So you don't have to.",
@@ -99,7 +77,7 @@ const tabs: FeatureTab[] = [
     ],
   },
   {
-    num: '05',
+    num: '04',
     title: 'Hackable /skills, /mcp, /commands, and plugins',
     href: '/features#mcp',
     rightTitle: 'Hackable. Out of the box.',
@@ -119,11 +97,11 @@ const tabs: FeatureTab[] = [
     ],
   },
   {
-    num: '06',
-    title: 'Collaborate /share sessions, nooes rules push/pull',
+    num: '05',
+    title: 'Collaborate /share sessions',
     href: '/features#collab',
     rightTitle: 'Even better, together.',
-    rightDesc: '/share sessions. nooes rules push/pull. Workflows, across teams.',
+    rightDesc: '/share sessions across teams.',
     commands: [
       {
         input: 'nooes sync --live',
@@ -139,7 +117,7 @@ const tabs: FeatureTab[] = [
     ],
   },
   {
-    num: '07',
+    num: '06',
     title: 'Your design partner',
     code: '`/design`',
     href: '/features#design-partner',
