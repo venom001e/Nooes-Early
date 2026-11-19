@@ -223,7 +223,7 @@ brew install --cask nooes-desktop
 - **Verified Statements:**
   - Nooes is built for privacy-sensitive environments and does not store your code or context data.
   - Data is stored only if you use hosted free models or explicitly generate share links.
-  - Open source under the MIT License *(verify repository LICENSE file)*.
+  - Open source proprietary.
 - **Required Sections:**
   - What stays on your local machine.
   - What data is transmitted to model providers (prompts and selected context).

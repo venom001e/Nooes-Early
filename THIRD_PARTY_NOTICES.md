@@ -1,3 +1,7 @@
+# Third-Party Notices
+
+## Website template
+
 MIT License
 
 Copyright (c) 2025 JCodesMore
