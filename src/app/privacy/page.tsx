@@ -241,7 +241,7 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
                   <li>We collect your authentication identity (e.g. GitHub handle, work email address).</li>
-                  <li>Billing transactions are managed through third-party PCI-DSS certified payment processors (such as Stripe). We do not store or process raw credit card numbers on our infrastructure.</li>
+                  <li>Billing transactions are managed through third-party payment processors (such as Stripe). We do not store or process raw credit card numbers on our infrastructure.</li>
                 </ul>
               </section>
 

@@ -276,7 +276,7 @@ brew install --cask nooes-desktop
 > [!CAUTION]
 > Avoid publishing unverified or legacy template data:
 > - Do not include template metrics (e.g. 195K GitHub stars, 950 contributors, 13,000 commits, 16M monthly users).
-> - Do not claim compliance like SOC 2, SSO, or Trust Center unless officially certified.
+> - Do not claim external compliance or enterprise certifications unless officially verified.
 > - Do not reference discontinued tier names (Zen, Go, Black), hosted gateway billing, or Stripe referral plans.
 > - Do not reference other agent names (e.g. "opencode pair", opencode.ai URLs, or third-party Docker images).
 > - Do not copy-paste third-party documentation verbatim.
