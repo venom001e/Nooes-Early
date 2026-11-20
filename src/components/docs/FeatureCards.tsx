@@ -31,10 +31,10 @@ const CAPABILITIES = [
   {
     title: "Bring Your Own Model",
     subtitle: "Cloud & Local Inference",
-    description: "Connect OpenAI, Anthropic, Gemini, or run offline open-weights models via Ollama. Zero middleman markup, pure direct billing.",
+    description: "Connect OpenAI, Anthropic, Gemini, or run offline models via Ollama. Direct billing with your provider.",
     icon: KeyRound,
     stat: "BYOK",
-    statLabel: "zero-markup",
+    statLabel: "direct",
   },
   {
     title: "Existing Subscriptions",

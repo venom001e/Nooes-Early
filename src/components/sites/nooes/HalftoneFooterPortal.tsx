@@ -4,11 +4,11 @@ import { useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import HalftoneWordmarkFooter from '@/components/ui/halftone-wordmark-footer';
 
-const emptySubscribe = () => () => {};
+const emptyListener = () => () => {};
 
 export default function HalftoneFooterPortal() {
   const isClient = useSyncExternalStore(
-    emptySubscribe,
+    emptyListener,
     () => true,
     () => false
   );

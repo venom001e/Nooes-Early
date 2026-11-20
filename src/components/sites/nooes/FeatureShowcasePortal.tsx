@@ -4,7 +4,7 @@ import { useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import FeatureShowcase from './FeatureShowcase';
 
-const emptySubscribe = () => () => {};
+const emptyListener = () => () => {};
 
 /**
  * Client-only portal that mounts FeatureShowcase into the #feature-showcase-mount
@@ -13,7 +13,7 @@ const emptySubscribe = () => () => {};
  */
 export default function FeatureShowcasePortal() {
   const isClient = useSyncExternalStore(
-    emptySubscribe,
+    emptyListener,
     () => true,
     () => false
   );

@@ -429,12 +429,12 @@ nooes doctor
     content: `
 # Providers and API Keys
 
-Nooes is model-agnostic: use leading cloud foundation models or run private offline neural networks on your own hardware.
+Nooes is model-agnostic: use cloud foundation models or run private offline models on your own hardware.
 
 ## Core Principles
 
 - **Local models are free:** No subscription, account, or internet connection required.
-- **Direct billing:** If you connect a paid provider (OpenAI, Anthropic, xAI, Google), usage fees are billed directly by that provider. Nooes charges zero markup.
+- **Direct billing:** If you connect a paid provider (OpenAI, Anthropic, xAI, Google), usage fees are billed directly by that provider.
 - **Your keys stay private:** API keys are stored locally on your machine and are only transmitted to the designated provider endpoint.
 
 ## Connecting a Provider

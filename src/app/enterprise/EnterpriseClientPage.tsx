@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "How does pricing work?",
-    a: "Enterprise licensing is organized around predictable per-seat pricing with volume tiers. Because Nooes directly connects to your own AI provider credentials or local models, there are no artificial token markups or gateway usage penalties.",
+    a: "Enterprise licensing is organized around predictable per-seat pricing with volume tiers. Because Nooes directly connects to your own AI provider credentials or local models, there are no gateway usage penalties.",
   },
   {
     q: "Is my data secure?",
