@@ -7,7 +7,6 @@ import { DocPage, DOCS_NAV_GROUPS } from "@/data/docs/docsData";
 import { CodeBlock } from "./CodeBlock";
 import { DocsHero } from "./DocsHero";
 import { FeatureCards } from "./FeatureCards";
-import { ModelsGrid } from "./ModelsGrid";
 
 interface DocsContentProps {
   page: DocPage;
@@ -226,7 +225,6 @@ export function DocsContent({ page }: DocsContentProps) {
       {page.slug === "" && (
         <>
           <FeatureCards />
-          <ModelsGrid />
         </>
       )}
 

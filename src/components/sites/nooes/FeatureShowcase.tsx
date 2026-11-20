@@ -87,10 +87,6 @@ const tabs: FeatureTab[] = [
         input: 'nooes model --switch',
         runDelayMs: 400,
         output: [
-          { text: 'Active model: Anthropic Claude 3.7 Sonnet (Hybrid Reasoning)', tone: 'info' },
-          { text: '  - Reasoning model: OpenAI o3-mini', tone: 'muted' },
-          { text: '  - Fast model: Groq DeepSeek-R1', tone: 'muted' },
-          { text: '  - Local fallback: Ollama / Qwen 2.5 Coder', tone: 'muted' },
           { text: '✔ Multi-provider engine connected.', tone: 'success' },
         ],
       },
