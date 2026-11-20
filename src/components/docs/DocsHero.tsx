@@ -30,19 +30,6 @@ export function DocsHero() {
 
   return (
     <div className="not-prose border border-dashed border-border rounded-lg overflow-hidden bg-background mb-10 shadow-xs">
-      {/* Top Banner image preview */}
-      <div className="border-b border-dashed border-border p-3 sm:p-4 bg-muted/10 flex items-center justify-center overflow-hidden">
-        <div className="relative w-full max-h-[160px] sm:max-h-[200px] overflow-hidden rounded border border-border/80 flex items-center justify-center bg-black/60">
-          <img
-            src="/docs/mns.png"
-            alt="Nooes"
-            className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity"
-          />
-          {/* Subtle gradient vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent pointer-events-none" />
-        </div>
-      </div>
-
       {/* 2-Column Split: Headline vs. Interactive Install Widget */}
       <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-dashed divide-border">
         {/* Left Headline */}
