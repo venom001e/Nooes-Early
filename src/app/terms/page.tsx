@@ -4,7 +4,7 @@ import SiteInteractions from "@/components/sites/nooes/SiteInteractions";
 
 export const metadata: Metadata = {
   title: "Terms of Service - Nooes",
-  description: "Terms of Service for the free, open-source Nooes developer tools and website.",
+  description: "Terms of Service for the Nooes developer tools and website.",
 };
 
 export default function TermsPage() {
@@ -283,7 +283,7 @@ export default function TermsPage() {
 
             {/* Bottom Footer Navigation */}
             <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
-              <span>Nooes &middot; Free &amp; Open-Source Developer Tools</span>
+              <span>Nooes &middot; Developer Tools</span>
               <div className="flex items-center gap-4">
                 <Link href="/privacy" className="hover:text-white underline underline-offset-4 transition-colors">
                   Privacy Policy

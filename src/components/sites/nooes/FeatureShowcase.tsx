@@ -39,8 +39,8 @@ const tabs: FeatureTab[] = [
     num: '02',
     title: 'Skills, reviews, bundled agentic tools',
     href: '/features#tools',
-    rightTitle: 'Tools built in.',
-    rightDesc: 'Read and shell tools with file ops, grep, and extended thinking support.',
+    rightTitle: 'Built in.',
+    rightDesc: 'Plans, edits and tests code in your project.',
     commands: [
       {
         input: 'nooes "Fix the TypeError on checkout and retest"',

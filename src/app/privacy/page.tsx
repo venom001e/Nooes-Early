@@ -237,7 +237,7 @@ export default function PrivacyPage() {
                   <span className="text-zinc-600">// 07</span> Accounts &amp; Payments
                 </h2>
                 <p className="mb-3">
-                  No account registration is mandatory to run the open-source Nooes CLI. If you subscribe to paid collaboration or enterprise features:
+                  No account registration is mandatory to run the Nooes CLI. If you subscribe to paid collaboration or enterprise features:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
                   <li>We collect your authentication identity (e.g. GitHub handle, work email address).</li>

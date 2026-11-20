@@ -38,14 +38,14 @@ export function DocsHero() {
             <div className="flex items-center gap-2 mb-2.5">
               <span className="size-2 rounded-full bg-brand-text animate-pulse" />
               <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground font-bold">
-                An AI Coding IDE For Open Models
+                An AI Coding IDE
               </span>
             </div>
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground leading-snug">
               Think in Code. <span className="text-brand-text">Build Beyond.</span>
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
-              We made open models work. Semantic LSP indexing. Multi-session agents. Surgical diffs.
+              Semantic LSP indexing. Multi-session agents. Surgical diffs.
             </p>
           </div>
 

@@ -542,7 +542,7 @@ For CI/CD runners or high-security projects, restrict shell commands to a strict
       { id: 'share-links', title: 'How Share Links Work', level: 2 },
       { id: 'telemetry', title: 'Telemetry and Opt-Out', level: 2 },
       { id: 'data-rights', title: 'Data Rights and Retention', level: 2 },
-      { id: 'open-source', title: 'Open Source License', level: 2 },
+      { id: 'software-license', title: 'Software License', level: 2 },
     ],
     content: `
 # Privacy and Data
@@ -604,7 +604,7 @@ Nooes is proprietary software.
       { id: 'subscription-needed', title: 'Do I need an AI subscription?', level: 2 },
       { id: 'existing-accounts', title: 'Can I use existing subscriptions?', level: 2 },
       { id: 'cost', title: 'How much does Nooes cost?', level: 2 },
-      { id: 'open-source', title: 'Where is the source code?', level: 2 },
+      { id: 'source-code', title: 'Where is the source code?', level: 2 },
     ],
     content: `
 # Frequently Asked Questions
@@ -618,7 +618,7 @@ Nooes is an autonomous AI software engineering agent that runs inside your proje
 Install the CLI with \`npm i -g nooes\`, navigate to your repository, and run \`nooes\`. Follow the 5-minute [Quickstart Guide](/docs/quickstart).
 
 ### Do I need an AI subscription?
-Not necessarily. You can run open-source models completely free offline using [Ollama](/docs/providers). If you prefer cloud models like Claude 3.7 or GPT-4o, bring your own API key.
+Not necessarily. You can run models completely free offline using [Ollama](/docs/providers). If you prefer cloud models like Claude 3.7 or GPT-4o, bring your own API key.
 
 ### Can I use my existing subscriptions?
 Yes! Nooes supports sign-ins for select developer accounts such as GitHub Copilot \`[ADD OTHERS IF SUPPORTED]\`.
