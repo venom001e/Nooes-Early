@@ -600,11 +600,9 @@ Nooes is proprietary software.
     summary: 'Answers to common questions about Nooes features and pricing.',
     headings: [
       { id: 'what-is-nooes', title: 'What is Nooes?', level: 2 },
-      { id: 'how-to-start', title: 'How do I get started?', level: 2 },
-      { id: 'subscription-needed', title: 'Do I need an AI subscription?', level: 2 },
-      { id: 'existing-accounts', title: 'Can I use existing subscriptions?', level: 2 },
-      { id: 'cost', title: 'How much does Nooes cost?', level: 2 },
-      { id: 'source-code', title: 'Where is the source code?', level: 2 },
+      { id: 'is-open-source', title: 'Is Nooes open source?', level: 2 },
+      { id: 'what-does-it-cost', title: 'What does it cost?', level: 2 },
+      { id: 'more-questions', title: 'More questions?', level: 2 },
     ],
     content: `
 # Frequently Asked Questions
@@ -612,28 +610,16 @@ Nooes is proprietary software.
 Find quick answers to common questions about Nooes.
 
 ### What is Nooes?
-Nooes is an autonomous AI software engineering agent that runs inside your project, understands your architecture, edits code, fixes bugs, and executes terminal commands with your approval.
+Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.
 
-### How do I get started?
-Install the CLI with \`npm i -g nooes\`, navigate to your repository, and run \`nooes\`. Follow the 5-minute [Quickstart Guide](/docs/quickstart).
+### Is Nooes open source?
+No. Nooes is proprietary software.
 
-### Do I need an AI subscription?
-Not necessarily. You can run models completely free offline using [Ollama](/docs/providers). If you prefer cloud models like Claude 3.7 or GPT-4o, bring your own API key.
+### What does it cost?
+Nooes is in early access. Pricing will be announced soon.
 
-### Can I use my existing subscriptions?
-Yes! Nooes supports sign-ins for select developer accounts such as GitHub Copilot \`[ADD OTHERS IF SUPPORTED]\`.
-
-### Can I only use it in the terminal?
-No. Nooes provides a terminal interface, a standalone desktop app for macOS, Windows, and Linux, and native extensions for VS Code, Cursor, and JetBrains.
-
-### How much does Nooes cost?
-Nooes is proprietary software. You only pay your respective model provider for any direct API token usage you incur.
-
-### What about data and privacy?
-Nooes is local-first. We do not store, train on, or upload your proprietary source code to any central server. See [Privacy and Data](/docs/privacy).
-
-### Where is the source code?
-Nooes is proprietary software.
+### More questions?
+Email us at support@nooes.ai.
 `,
   },
 };

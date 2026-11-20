@@ -15,20 +15,20 @@ interface FormData {
 
 const FAQS = [
   {
-    q: "What is Nooes Enterprise?",
-    a: "Nooes Enterprise is built for engineering teams and organizations that require their code and data to stay strictly within their own boundaries. It operates local-first inside your workspace without transmitting proprietary repositories or context to any central server.",
+    q: "What is Nooes?",
+    a: "Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.",
   },
   {
-    q: "How do I get started?",
-    a: "Start with an internal evaluation with your engineering team. By default, Nooes runs locally and does not store your code or context. Once you validate the developer experience, contact us to discuss organizational rollout and volume licensing.",
+    q: "Is Nooes open source?",
+    a: "No. Nooes is proprietary software.",
   },
   {
-    q: "How does pricing work?",
-    a: "Enterprise licensing is organized around predictable per-seat pricing with volume tiers. Because Nooes directly connects to your own AI provider credentials or local models, there are no gateway usage penalties.",
+    q: "What does it cost?",
+    a: "Nooes is in early access. Pricing will be announced soon.",
   },
   {
-    q: "Is my data secure?",
-    a: "Yes. Nooes does not store or train on your source code. Model processing executes either 100% offline via local inference (Ollama / vLLM) or through direct, encrypted HTTPS connections from your environment to your designated model provider.",
+    q: "More questions?",
+    a: "Email us at support@nooes.ai.",
   },
 ];
 
