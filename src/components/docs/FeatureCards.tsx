@@ -28,30 +28,6 @@ const CAPABILITIES = [
     stat: "/share",
     statLabel: "command",
   },
-  {
-    title: "Bring Your Own Model",
-    subtitle: "Cloud & Local Inference",
-    description: "Connect OpenAI, Anthropic, Gemini, or run offline models via Ollama. Direct billing with your provider.",
-    icon: KeyRound,
-    stat: "BYOK",
-    statLabel: "direct",
-  },
-  {
-    title: "Existing Subscriptions",
-    subtitle: "GitHub Copilot & More",
-    description: "Leverage the subscriptions you already pay for. Sign in with GitHub Copilot or supported provider accounts with ease.",
-    icon: UserCheck,
-    stat: "OAuth",
-    statLabel: "compatible",
-  },
-  {
-    title: "Any Editor",
-    subtitle: "Terminal, Desktop & IDE",
-    description: "Works seamlessly across terminal windows, a native desktop application, or embedded inside VS Code, Cursor, and JetBrains.",
-    icon: TerminalSquare,
-    stat: "Any OS",
-    statLabel: "native",
-  },
 ];
 
 export function FeatureCards() {

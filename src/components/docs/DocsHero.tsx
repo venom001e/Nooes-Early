@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Terminal, Laptop, Check, Copy, ArrowRight } from "lucide-react";
+import { Terminal, Laptop, Check, Copy } from "lucide-react";
 
 export function DocsHero() {
   const [activeTab, setActiveTab] = React.useState<"cli" | "desktop">("cli");
@@ -10,10 +10,10 @@ export function DocsHero() {
   const [copied, setCopied] = React.useState(false);
 
   const commands: Record<string, string> = {
-    npm: "npm i -g nooes",
-    bun: "bun add -g nooes",
-    brew: "brew install nooes-ai/tap/nooes",
-    curl: "curl -fsSL https://nooes.dev/install | bash",
+    npm: "nooes",
+    bun: "nooes",
+    brew: "nooes",
+    curl: "nooes",
   };
 
   const currentCommand = commands[activePkg];
@@ -45,18 +45,14 @@ export function DocsHero() {
               Think in Code. <span className="text-brand-text">Build Beyond.</span>
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
-              Semantic LSP indexing. Multi-session agents. Surgical diffs.
+              Nooes is an AI coding IDE with an agent that plans, edits and tests your code.
             </p>
           </div>
 
           <div className="flex items-center gap-3 pt-2">
-            <Link
-              href="/docs/quickstart"
-              className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-foreground hover:text-brand-text transition-colors group"
-            >
-              <span>5-minute Quickstart</span>
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-foreground">
+              <span>Early access</span>
+            </span>
           </div>
         </div>
 

@@ -46,43 +46,12 @@ export const DOC_PAGES: Record<string, DocPage> = {
     slug: '',
     title: 'Introduction',
     group: 'Getting Started',
-    summary: 'Nooes is an AI coding agent that helps you write and run code. It is available as a terminal interface, a desktop app, and an IDE extension.',
-    headings: [
-      { id: 'overview', title: 'Overview', level: 2 },
-      { id: 'what-you-can-do', title: 'What You Can Do', level: 2 },
-      { id: 'next-steps', title: 'Next Steps', level: 2 },
-    ],
+    summary: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
+    headings: [],
     content: `
 # Introduction
 
-Nooes is an AI coding agent that helps you write and run code. It understands your project context, automates repetitive development tasks, and is available across your favorite environments: as a terminal interface, a native desktop application, and an IDE extension.
-
-## Overview
-
-Unlike generic AI assistants that live in isolated browser tabs, Nooes operates directly inside your working workspace. It inspects directory structures, reads file dependencies, edits code with surgical diffs, runs test suites, and executes command-line workflows with your explicit permission.
-
-> [!NOTE]
-> Nooes is built local-first: your source code stays on your machine, and you can connect any model provider using your own API keys or run private local models without fees.
-
-## What You Can Do
-
-Explore the core architectural capabilities provided by Nooes:
-
-- **LSP Support:** Automatically spins up the correct Language Server Protocol (LSP) instances so the model has true semantic understanding of types, symbols, imports, and definitions across your codebase.
-- **Multi-Session:** Launch and orchestrate multiple isolated agent threads in parallel on the same project without workspace collision.
-- **Share Links:** Generate interactive snapshot URLs of any debugging session to collaborate with teammates or document edge cases.
-- **Bring Your Own Model:** Directly configure API keys for OpenAI, Anthropic, Google Gemini, xAI, or run local models offline via Ollama.
-- **Use Existing Subscriptions:** Sign in seamlessly with existing supported accounts including GitHub Copilot \`[CONFIRM WHICH]\`.
-- **Any Editor:** Work wherever you are productive—in the terminal, a full-featured desktop window, or directly in your editor.
-
-## Next Steps
-
-Get up and running with Nooes in minutes:
-
-1. [Install Nooes](/docs/install) &mdash; Set up the CLI, download the desktop binary, or install the IDE plugin.
-2. [Quickstart Guide](/docs/quickstart) &mdash; Walk through your very first 5-minute autonomous task.
-3. [Connect Providers](/docs/providers) &mdash; Add your preferred API keys or spin up local offline inference.
-4. [Frequently Asked Questions](/docs/faq) &mdash; Learn about licensing, privacy, and system capabilities.
+Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application. Nooes is proprietary software. Nooes is in early access. Pricing will be announced soon.
 `,
   },
 
