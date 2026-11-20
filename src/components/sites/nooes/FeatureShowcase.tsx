@@ -39,8 +39,8 @@ const tabs: FeatureTab[] = [
     num: '02',
     title: 'Skills, reviews, bundled agentic tools',
     href: '/features#tools',
-    rightTitle: 'Best in class tools. Built in.',
-    rightDesc: 'Read and shell tools that lead the token efficiency frontier. File ops, grep, extended thinking.',
+    rightTitle: 'Tools built in.',
+    rightDesc: 'Read and shell tools with file ops, grep, and extended thinking support.',
     commands: [
       {
         input: 'nooes "Fix the TypeError on checkout and retest"',
@@ -158,10 +158,10 @@ export default function FeatureShowcase() {
         <h2 aria-hidden="true" className="font-mono text-md sm:text-xl lg:text-2xl font-medium text-start">
           <span className="text-muted-foreground/60 mr-4 tracking-[-0.3em]">{'//'}</span>
           <span dir="auto" className="inline-block tracking-tighter text-white" style={{ opacity: 1 }}>
-            best coding agent for open models.
+            an AI coding IDE that plans, edits and tests.
           </span>
         </h2>
-        <h2 className="sr-only">best coding agent for open models.</h2>
+        <h2 className="sr-only">an AI coding IDE that plans, edits and tests.</h2>
       </div>
 
       {/* ROW 2: Subheading and CTA Buttons */}
