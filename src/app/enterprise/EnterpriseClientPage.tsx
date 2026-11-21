@@ -184,7 +184,7 @@ export default function EnterprisePage() {
                 Your code is yours
               </h1>
               <p className="text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed mb-4">
-                Nooes operates securely inside your organization with no data or context stored and no licensing restrictions or ownership claims. Start a trial with your team, then deploy it across your organization.
+                Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.
               </p>
               <p className="text-sm font-mono text-zinc-400">
                 Let us know how we can help.
@@ -208,7 +208,7 @@ export default function EnterprisePage() {
                     Message sent, we&apos;ll be in touch soon.
                   </div>
                   <p className="text-xs text-zinc-500 font-mono">
-                    A team member will reach out to your company email within one business day.
+                    A team member will reach out to your company email.
                   </p>
                   <button
                     type="button"
