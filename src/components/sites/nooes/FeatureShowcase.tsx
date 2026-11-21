@@ -23,7 +23,7 @@ const tabs: FeatureTab[] = [
     rightDesc: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
     commands: [
       {
-        input: 'nooes "Add Dark Mode and create user dashboard"',
+        input: '> Add dark mode and create a user dashboard',
         runDelayMs: 600,
         output: [
           { text: 'Example output', tone: 'muted' },
@@ -44,7 +44,7 @@ const tabs: FeatureTab[] = [
     rightDesc: 'Nooes is a desktop application.',
     commands: [
       {
-        input: 'nooes "Fix the TypeError on checkout and retest"',
+        input: '> Fix the TypeError on checkout and retest',
         runDelayMs: 700,
         output: [
           { text: 'Example output', tone: 'muted' },
@@ -65,7 +65,7 @@ const tabs: FeatureTab[] = [
     rightDesc: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
     commands: [
       {
-        input: 'nooes run "npm run check"',
+        input: '> Run npm run check',
         runDelayMs: 500,
         output: [
           { text: 'Example output', tone: 'muted' },
