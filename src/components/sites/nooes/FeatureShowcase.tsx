@@ -128,7 +128,7 @@ export default function FeatureShowcase() {
           </div>
           <div className="w-full sm:flex-1 lg:w-auto lg:flex-none">
             <a
-              href="https://nooes.ai/docs"
+              href="/docs"
               target="_blank"
               rel="noopener noreferrer"
               className="justify-center font-medium transition-colors group select-none border border-input text-white rounded-[100px] shadow hover:bg-muted/80 duration-300 flex text-sm sm:text-base items-center gap-2 px-6 py-[10px] w-full lg:w-auto font-sans"

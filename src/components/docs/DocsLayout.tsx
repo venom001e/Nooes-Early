@@ -238,16 +238,7 @@ export function DocsLayout({ children, activePage }: DocsLayoutProps) {
               <Link href="/" className="hover:text-foreground transition-colors flex items-center gap-1">
                 ← Home
               </Link>
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://discord.gg/nooes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Discord
-                </a>
-              </div>
+              
             </div>
           </div>
         </aside>
@@ -374,14 +365,7 @@ export function DocsLayout({ children, activePage }: DocsLayoutProps) {
                 <Link href="/changelog" className="hover:text-foreground transition-colors">
                   Changelog
                 </Link>
-                <a
-                  href="https://discord.gg/nooes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Discord
-                </a>
+                
               </div>
             </footer>
           </div>

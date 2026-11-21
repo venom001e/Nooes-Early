@@ -323,7 +323,7 @@ export default function SiteInteractions() {
               Contact
             </Link>
             <a
-              href="https://nooes.ai/docs"
+              href="/docs"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
