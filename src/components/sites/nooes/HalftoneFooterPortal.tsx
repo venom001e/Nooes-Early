@@ -21,7 +21,6 @@ export default function HalftoneFooterPortal() {
   return createPortal(
     <div className="w-full bg-black py-4">
       <HalftoneWordmarkFooter
-        logoSrc="/logos/nooes-logo.png"
         wordmark="Nooes"
         label="Nooes"
         meta="©2026 · The AI Software Engineering Platform"
