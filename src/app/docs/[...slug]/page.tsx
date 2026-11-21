@@ -28,11 +28,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const isComingSoon = page.summary.toLowerCase().includes("coming soon") || page.content.toLowerCase().includes("coming soon");
+  const summary = page.summary || "";
+  const isComingSoon = summary.toLowerCase().includes("coming soon") || page.content.toLowerCase().includes("coming soon");
 
   return {
     title: `${page.title} | Nooes Docs`,
-    description: isComingSoon ? "Coming soon." : page.summary,
+    description: isComingSoon ? "Coming soon." : summary,
   };
 }
 
@@ -51,4 +52,3 @@ export default async function DocSubPage({ params }: PageProps) {
     </DocsLayout>
   );
 }
-
