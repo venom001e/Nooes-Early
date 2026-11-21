@@ -102,7 +102,7 @@ export default function EnterprisePage() {
                 // Enterprise Solutions
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-                Your code is yours
+                Nooes for teams.
               </h1>
               <p className="text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed mb-4">
                 Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.

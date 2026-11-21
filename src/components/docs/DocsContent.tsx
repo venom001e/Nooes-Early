@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowRight, Info, AlertTriangle, AlertCircle } from "lucide-
 import { DocPage, DOCS_NAV_GROUPS } from "@/data/docs/docsData";
 import { CodeBlock } from "./CodeBlock";
 import { DocsHero } from "./DocsHero";
-import { FeatureCards } from "./FeatureCards";
 
 interface DocsContentProps {
   page: DocPage;
@@ -222,11 +221,7 @@ export function DocsContent({ page }: DocsContentProps) {
       <div className="prose prose-invert max-w-none">{renderedContent}</div>
 
       {/* Extra rich sections for the intro page */}
-      {page.slug === "" && (
-        <>
-          <FeatureCards />
-        </>
-      )}
+
 
 
 
