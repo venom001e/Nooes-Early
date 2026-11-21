@@ -55,12 +55,6 @@ export default function PrivacyPage() {
                   </Link>
                 </li>
               </ul>
-              <Link 
-                href="/signup" 
-                className="inline-flex items-center justify-center rounded-full bg-white text-black font-semibold px-5 py-2 text-xs sm:text-sm hover:bg-zinc-200 transition-colors"
-              >
-                Sign Up
-              </Link>
             </div>
 
             {/* Mobile Menu Trigger */}
@@ -105,7 +99,7 @@ export default function PrivacyPage() {
                 <li><a href="#share-links" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">04.</span> Share Links &amp; Session Snapshots</a></li>
                 <li><a href="#free-hosted-models" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">05.</span> Free &amp; Hosted Models</a></li>
                 <li><a href="#analytics-telemetry" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">06.</span> Analytics &amp; Telemetry</a></li>
-                <li><a href="#accounts-payments" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">07.</span> Accounts &amp; Payments</a></li>
+                <li><a href="#payments" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">07.</span> Payments</a></li>
                 <li><a href="#email-contact-form" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">08.</span> Email List &amp; Contact Forms</a></li>
                 <li><a href="#retention-deletion" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">09.</span> Data Retention &amp; Deletion</a></li>
                 <li><a href="#children" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-zinc-600">10.</span> Children&apos;s Privacy</a></li>
@@ -173,10 +167,10 @@ export default function PrivacyPage() {
                 <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
-              {/* 07. Accounts and Payments */}
-              <section id="accounts-payments" className="scroll-mt-32 pt-6 border-t border-border">
+              {/* 07. Payments */}
+              <section id="payments" className="scroll-mt-32 pt-6 border-t border-border">
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
-                  <span className="text-zinc-600">// 07</span> Accounts &amp; Payments
+                  <span className="text-zinc-600">// 07</span> Payments
                 </h2>
 
                 <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>

@@ -332,22 +332,7 @@ export default function SiteInteractions() {
             </a>
           </nav>
 
-          <div className="flex flex-col gap-3 pt-6 border-t border-zinc-800">
-            <Link
-              href="/signin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-800 transition"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/signup"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition"
-            >
-              Sign Up
-            </Link>
-          </div>
+
         </div>
       )}
     </>

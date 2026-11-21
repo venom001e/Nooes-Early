@@ -77,12 +77,6 @@ export default function EnterprisePage() {
                   </Link>
                 </li>
               </ul>
-              <Link 
-                href="/signup" 
-                className="inline-flex items-center justify-center rounded-full bg-white text-black font-semibold px-5 py-2 text-xs sm:text-sm hover:bg-zinc-200 transition-colors"
-              >
-                Sign Up
-              </Link>
             </div>
 
             {/* Mobile Menu Trigger */}
