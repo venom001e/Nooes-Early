@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ExternalLink, Info, AlertTriangle, AlertCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Info, AlertTriangle, AlertCircle } from "lucide-react";
 import { DocPage, DOCS_NAV_GROUPS } from "@/data/docs/docsData";
 import { CodeBlock } from "./CodeBlock";
 import { DocsHero } from "./DocsHero";
@@ -228,18 +228,7 @@ export function DocsContent({ page }: DocsContentProps) {
         </>
       )}
 
-      {/* Edit on GitHub link */}
-      <div className="mt-12 pt-6 border-t border-dashed border-border flex items-center justify-between text-xs text-muted-foreground font-mono">
-        <a
-          href="https://github.com/nooes-ai/nooes"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-foreground inline-flex items-center gap-1.5 transition-colors"
-        >
-          <ExternalLink className="size-3" />
-          <span>Edit this page on GitHub</span>
-        </a>
-      </div>
+
 
       {/* Prev / Next Navigation Cards */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
