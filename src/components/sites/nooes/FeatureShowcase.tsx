@@ -87,7 +87,6 @@ const tabs: FeatureTab[] = [
         input: 'nooes model --switch',
         runDelayMs: 400,
         output: [
-          { text: '✔ Multi-provider engine connected.', tone: 'success' },
         ],
       },
     ],
