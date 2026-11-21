@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import EnterpriseClientPage from "./EnterpriseClientPage";
 
 export const metadata: Metadata = {
-  title: "Nooes | Enterprise solutions for your organisation",
-  description: "Contact Nooes for enterprise solutions",
+  title: "Enterprise | Nooes",
+  description: "Nooes for teams.",
 };
 
 export default function EnterprisePage() {

@@ -14,8 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nooes.ai"),
   title: "Nooes",
-  description: "Nooes is an AI-powered software engineering platform designed to help developers build software more efficiently directly inside their project.",
+  description: "Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.",
+  openGraph: {
+    title: "Nooes",
+    description: "Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.",
+    siteName: "Nooes",
+    type: "website",
+    url: "https://nooes.ai",
+  },
+  twitter: {
+    card: "summary",
+    title: "Nooes",
+    description: "Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.",
+  },
+  robots: process.env.ALLOW_INDEXING === "true" ? { index: true, follow: true } : { index: false, follow: false },
   icons: {
     icon: [
       { url: "/logos/nooes-icon.png", type: "image/png" },

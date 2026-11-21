@@ -3,7 +3,7 @@ import Link from "next/link";
 import SiteInteractions from "@/components/sites/nooes/SiteInteractions";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Nooes",
+  title: "Terms | Nooes",
   description: "Terms of Service for the Nooes developer tools and website.",
 };
 

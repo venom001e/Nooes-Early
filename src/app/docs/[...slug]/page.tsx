@@ -24,13 +24,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!page) {
     return {
-      title: "Page Not Found — Nooes Docs",
+      title: "Page Not Found | Nooes Docs",
     };
   }
 
+  const isComingSoon = page.summary.toLowerCase().includes("coming soon") || page.content.toLowerCase().includes("coming soon");
+
   return {
-    title: `${page.title} — Nooes Documentation`,
-    description: page.summary,
+    title: `${page.title} | Nooes Docs`,
+    description: isComingSoon ? "Coming soon." : page.summary,
   };
 }
 

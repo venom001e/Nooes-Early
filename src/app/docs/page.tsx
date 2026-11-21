@@ -4,8 +4,8 @@ import { DocsLayout } from "@/components/docs/DocsLayout";
 import { DocsContent } from "@/components/docs/DocsContent";
 
 export const metadata: Metadata = {
-  title: "Introduction — Nooes Documentation",
-  description: DOC_PAGES[""].summary,
+  title: "Docs | Nooes",
+  description: "Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.",
 };
 
 export default function DocsIntroPage() {

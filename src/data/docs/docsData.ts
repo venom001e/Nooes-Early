@@ -46,7 +46,7 @@ export const DOC_PAGES: Record<string, DocPage> = {
     slug: '',
     title: 'Introduction',
     group: 'Getting Started',
-    summary: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
+    summary: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code. Nooes is a desktop application.',
     headings: [],
     content: `
 # Introduction
@@ -143,7 +143,7 @@ Coming soon. This page will be published when Nooes is released.
     slug: 'faq',
     title: 'Frequently Asked Questions',
     group: 'Project',
-    summary: 'Answers to common questions about Nooes features and pricing.',
+    summary: 'Frequently asked questions about Nooes.',
     headings: [
       { id: 'what-is-nooes', title: 'What is Nooes?', level: 2 },
       { id: 'is-open-source', title: 'Is Nooes open source?', level: 2 },

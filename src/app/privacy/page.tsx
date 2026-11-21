@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SiteInteractions from '@/components/sites/nooes/SiteInteractions';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Nooes",
+  title: "Privacy | Nooes",
   description: "How Nooes collects, uses, and protects your data.",
 };
 
