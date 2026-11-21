@@ -25,6 +25,7 @@ export default function HalftoneFooterPortal() {
         label="Nooes"
         meta="©2026 · The AI Software Engineering Platform"
         preset="night"
+        palette={{ warm: "#3b82f6" }}
         height="560px"
         dotGap={5}
         radius={85}

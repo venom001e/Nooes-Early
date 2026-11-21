@@ -73,7 +73,7 @@ export interface HalftoneWordmarkFooterProps {
 }
 
 const PRESETS: { [K in HalftonePreset]: HalftonePalette } = {
-  night: { background: "#0c0c0b", ink: "#e9e4da", warm: "#e9762b" },
+  night: { background: "#0c0c0b", ink: "#e9e4da", warm: "#3b82f6" },
   paper: { background: "#efebe3", ink: "#17150f", warm: "#c2361c" },
   ember: { background: "#160a06", ink: "#f2c48c", warm: "#ff5a1f" },
   cobalt: { background: "#0d1b4d", ink: "#dfe7ff", warm: "#ffcd3c" },
@@ -227,7 +227,7 @@ export default function HalftoneWordmarkFooter({
     let count = 0
     let grainTile = null as HTMLCanvasElement | null
     const ink = hwfHex(opts.current.colors.ink) || [233, 228, 218]
-    const warm = hwfHex(opts.current.colors.warm) || [233, 118, 43]
+    const warm = hwfHex(opts.current.colors.warm) || [59, 130, 246]
 
     const layout = () => {
       const o = opts.current

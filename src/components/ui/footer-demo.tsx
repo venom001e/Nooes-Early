@@ -9,6 +9,7 @@ export default function HalftoneFooterDemo() {
         wordmark="Nooes"
         label="Nooes"
         meta="©2026 · The AI Software Engineering Platform"
+        palette={{ warm: "#3b82f6" }}
       />
     </div>
   )
