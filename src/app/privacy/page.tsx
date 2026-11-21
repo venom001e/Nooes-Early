@@ -124,14 +124,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 01</span> Who We Are
                 </h2>
-                <p className="mb-3">
-                  This Privacy Policy applies to the software, tools, and websites operated under the <strong className="text-white">Nooes</strong> brand (including the CLI, desktop binary, and web portal at <a href="https://nooes.dev" className="text-white underline underline-offset-4 hover:text-zinc-400">nooes.dev</a>).
-                </p>
-                <div className="p-4 rounded border border-border bg-zinc-950 font-mono text-xs text-zinc-400 space-y-1">
-                  <p><span className="text-zinc-600">Organization:</span> Nooes Development Team [FILL: Entity Name]</p>
-                  <p><span className="text-zinc-600">Mailing Address:</span> [FILL: company address]</p>
-                  <p><span className="text-zinc-600">Privacy Officer:</span> <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a> [FILL]</p>
-                </div>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 02. What Stays on Your Device */}
@@ -139,17 +133,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 02</span> What Stays on Your Device
                 </h2>
-                <p className="mb-4">
-                  Nooes is built on local-first engineering principles. We do not operate a remote intermediary proxy that reads, buffers, or retains your codebase by default.
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm sm:text-base">
-                  <li><strong className="text-white">Your Source Code:</strong> Files, directories, language server indexing databases, and git histories remain strictly on your local machine.</li>
-                  <li><strong className="text-white">Prompts and Transcripts:</strong> Conversation logs, interactive tool outputs, and local agent memory are stored in your user configuration directory (<code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">~/.config/nooes/</code>).</li>
-                  <li><strong className="text-white">API Credentials:</strong> Third-party provider keys (OpenAI, Anthropic, Gemini, xAI) are saved locally on your filesystem or in your OS keychain, and are never synced to our servers.</li>
-                </ul>
-                <div className="mt-4 p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm text-zinc-400 font-mono">
-                  Principle: Unless you explicitly create a public share link or send a prompt to an external model provider, Nooes transmits zero proprietary code over the internet.
-                </div>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 03. What Is Sent to Model Providers */}
@@ -157,33 +142,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 03</span> What Is Sent to Model Providers
                 </h2>
-                <p className="mb-3">
-                  When you prompt an AI model, Nooes establishes a direct HTTPS connection from your device to that provider&apos;s API endpoint. It transmits only the prompt text and the specific file snippets or unified diffs necessary for the model to complete the request.
-                </p>
-                <p className="mb-4 text-zinc-400 text-xs sm:text-sm">
-                  Your data handling is governed directly by your customer contract with that provider:
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
-                  <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="p-3 rounded border border-border bg-zinc-950 hover:bg-zinc-900 transition-colors flex items-center justify-between text-zinc-300">
-                    <span>OpenAI Privacy Policy</span>
-                    <span className="text-zinc-600">&rarr;</span>
-                  </a>
-                  <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="p-3 rounded border border-border bg-zinc-950 hover:bg-zinc-900 transition-colors flex items-center justify-between text-zinc-300">
-                    <span>Anthropic Privacy Policy</span>
-                    <span className="text-zinc-600">&rarr;</span>
-                  </a>
-                  <a href="https://x.ai/privacy" target="_blank" rel="noopener noreferrer" className="p-3 rounded border border-border bg-zinc-950 hover:bg-zinc-900 transition-colors flex items-center justify-between text-zinc-300">
-                    <span>xAI Privacy Policy</span>
-                    <span className="text-zinc-600">&rarr;</span>
-                  </a>
-                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="p-3 rounded border border-border bg-zinc-950 hover:bg-zinc-900 transition-colors flex items-center justify-between text-zinc-300">
-                    <span>Google Gemini Privacy Policy</span>
-                    <span className="text-zinc-600">&rarr;</span>
-                  </a>
-                </div>
-                <p className="mt-4 text-xs text-zinc-500 font-mono">
-                  Local Models: If you configure a local provider running on localhost (Ollama, llama.cpp), 100% of the computation executes locally. Zero network packets leave your workstation.
-                </p>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 04. Share Links & Session Snapshots */}
@@ -191,14 +151,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 04</span> Share Links &amp; Session Snapshots
                 </h2>
-                <p className="mb-3">
-                  Nooes offers an optional <code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">/share</code> command to generate web snapshots of debugging sessions:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm sm:text-base">
-                  <li><strong className="text-white">What is stored:</strong> A transcript of the prompt trajectory, proposed diffs, and execution outputs for that specific session. Secret patterns and authorization tokens are scrubbed prior to upload.</li>
-                  <li><strong className="text-white">Accessibility:</strong> Share links are unlisted and viewable by anyone with the unique URL string. Do not generate share links for proprietary or confidential code without authorization.</li>
-                  <li><strong className="text-white">Retention &amp; Deletion:</strong> Share links are retained for up to 90 days [CONFIRM] unless manually removed. You can delete any share link directly from your CLI session history or by contacting us.</li>
-                </ul>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 05. Free Hosted Models */}
@@ -206,14 +160,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 05</span> Free &amp; Hosted Models
                 </h2>
-                <p className="mb-3">
-                  When accessing free community-hosted model relays provided for convenience (if available):
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li>Prompts may pass through temporary rate-limiting buffers to protect infrastructure integrity and prevent denial-of-service abuse.</li>
-                  <li>Buffer logs are purged within 14 days and are never used to train foundation models without affirmative consent.</li>
-                  <li>You can bypass community relays at any time by configuring private API keys or selecting local models.</li>
-                </ul>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 06. Analytics and Telemetry */}
@@ -221,14 +169,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 06</span> Analytics &amp; Telemetry
                 </h2>
-                <p className="mb-3">
-                  We collect minimal, anonymous operational telemetry strictly for stability:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li><strong className="text-white">CLI and Desktop Client:</strong> Collects anonymous OS type, client version, and unhandled crash diagnostics. It never captures file paths, code contents, or prompt strings.</li>
-                  <li><strong className="text-white">Opt-Out Command:</strong> Run <code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">nooes config set telemetry false</code> or add <code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">{`{"telemetry": false}`}</code> in your settings file to permanently disable telemetry.</li>
-                  <li><strong className="text-white">Website:</strong> Our landing page utilizes privacy-friendly, cookie-less metrics to observe aggregate traffic volume.</li>
-                </ul>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 07. Accounts and Payments */}
@@ -236,13 +178,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 07</span> Accounts &amp; Payments
                 </h2>
-                <p className="mb-3">
-                  No account registration is mandatory to run the Nooes CLI. If you use paid collaboration or enterprise features:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li>We collect your authentication identity (e.g. GitHub handle, work email address).</li>
-                  <li>Billing transactions are managed through third-party payment processors (such as Stripe). We do not store or process raw credit card numbers on our infrastructure.</li>
-                </ul>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 08. Email List and Contact Forms */}
@@ -250,14 +187,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 08</span> Email List &amp; Contact Forms
                 </h2>
-                <p className="mb-3">
-                  When you submit inquiries through our contact forms or join our release mailing list:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li>We collect your submitted details (name, email address, phone number, and message).</li>
-                  <li>This information is used strictly to respond to your technical inquiries, enterprise evaluations, or product updates.</li>
-                  <li>You may opt out from communications at any time. We do not sell or monetize personal data with third-party brokers.</li>
-                </ul>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 09. Data Retention and Deletion */}
@@ -265,12 +196,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 09</span> Data Retention &amp; Deletion
                 </h2>
-                <p className="mb-3">
-                  Local data resides entirely under your ownership. Deleting your local configuration folder (<code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">rm -rf ~/.config/nooes</code>) immediately removes all keys, session history, and cached indices.
-                </p>
-                <p className="text-sm text-zinc-400">
-                  To request the deletion of cloud-held data (newsletter subscriptions, enterprise inquiries, or generated share links), email <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400 font-mono">privacy@nooes.dev</a> with the subject &ldquo;Data Deletion Request&rdquo;. Requests are processed within 30 days.
-                </p>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 10. Children's Privacy */}
@@ -278,9 +205,7 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 10</span> Children&apos;s Privacy
                 </h2>
-                <p className="text-zinc-400">
-                  Nooes is a software engineering platform intended for individuals aged 13 and older (or 16 where required by local statute). We do not knowingly solicit or collect data from children. If you become aware that a minor has submitted personal information, please inform us for prompt deletion.
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 11. Your Privacy Rights */}
@@ -288,18 +213,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 11</span> Your Privacy Rights
                 </h2>
-                <p className="mb-3">
-                  Subject to your local jurisdiction (GDPR, CCPA, India DPDP Act), you hold enforceable rights regarding your personal information:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li><strong className="text-white">Access &amp; Portability:</strong> Request confirmation and an exportable copy of data we hold.</li>
-                  <li><strong className="text-white">Rectification:</strong> Correct incomplete or inaccurate records.</li>
-                  <li><strong className="text-white">Erasure:</strong> Request the deletion of cloud-held records.</li>
-                  <li><strong className="text-white">Objection:</strong> Opt out of processing for legitimate interests or automated evaluation.</li>
-                </ul>
-                <p className="mt-3 text-xs text-zinc-500 font-mono">
-                  Submit requests directly to our privacy desk at <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a>.
-                </p>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 12. Security */}
@@ -307,12 +222,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 12</span> Security
                 </h2>
-                <p className="mb-3">
-                  We believe in pragmatic security engineering. We avoid marketing promises of &ldquo;unhackable&rdquo; infrastructure; instead, our local-first architecture eliminates cloud honeypots. We cannot expose your proprietary source code because we do not ingest it.
-                </p>
-                <p className="text-sm text-zinc-400">
-                  Remote interactions (model provider communications, CLI update verification, share-link publishing) strictly enforce TLS 1.3 encryption in transit. Report suspected vulnerabilities to <a href="mailto:security@nooes.dev" className="text-white underline hover:text-zinc-400 font-mono">security@nooes.dev</a>.
-                </p>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 13. Changes to This Policy */}
@@ -320,9 +231,8 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 13</span> Changes to This Policy
                 </h2>
-                <p className="text-zinc-400">
-                  As new platform integrations ship, we may revise this policy. Notice of substantive amendments will be reflected by the &ldquo;Last updated&rdquo; timestamp and highlighted in release notes within our official code repository.
-                </p>
+
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 14. Contact Us */}
@@ -330,9 +240,7 @@ export default function PrivacyPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 14</span> Contact Us
                 </h2>
-                <p className="mb-4">
-                  For questions, data inquiries, or compliance notices:
-                </p>
+                <p className="mb-4">[FILL: to be written by a lawyer before launch]</p>
                 <div className="p-5 rounded border border-border bg-zinc-950 font-mono text-xs sm:text-sm space-y-2 text-zinc-400">
                   <p><span className="text-zinc-600">Privacy Desk:</span> <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a></p>
                   <p><span className="text-zinc-600">Security Reports:</span> <a href="mailto:security@nooes.dev" className="text-white underline hover:text-zinc-400">security@nooes.dev</a></p>

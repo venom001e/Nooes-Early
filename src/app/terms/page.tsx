@@ -127,12 +127,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 01</span> Acceptance &amp; Eligibility
                 </h2>
-                <p className="mb-3">
-                  By downloading, installing, copying, or using Nooes (the terminal CLI, desktop binary, website, and related tools), you agree to be bound by these Terms of Service. If you do not agree, do not use the software.
-                </p>
-                <p className="text-zinc-400 text-sm">
-                  You must be at least 13 years of age (or the minimum legal age in your jurisdiction) to use Nooes. If you accept on behalf of an entity, company, or team, you represent that you have authority to bind that entity to these terms.
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 02. The software */}
@@ -140,9 +135,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 02</span> The Software
                 </h2>
-                <p className="mb-3">
-                  [FILL: software license terms, to be written by a lawyer]
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 03. Your content and your code */}
@@ -150,12 +143,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 03</span> Your Content &amp; Your Code
                 </h2>
-                <p className="mb-3">
-                  <strong className="text-white">You retain complete and exclusive ownership of your code.</strong> Nooes claims zero ownership, license, title, or intellectual property rights over any source code, repositories, prompts, context files, or project artifacts you process using Nooes.
-                </p>
-                <p className="text-sm text-zinc-400">
-                  Because Nooes is local-first, your files remain on your workstation and are never copied to any central database or repository owned by Nooes.
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 04. Third-party model providers */}
@@ -163,14 +151,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 04</span> Third-Party Model Providers &amp; Keys
                 </h2>
-                <p className="mb-3">
-                  Nooes functions by routing structured prompts to AI model providers configured by you (e.g. OpenAI, Anthropic, Google Gemini, xAI, or local endpoints like Ollama):
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm sm:text-base">
-                  <li><strong className="text-white">Your Credentials:</strong> You are solely responsible for acquiring, managing, and securing your API keys and provider accounts.</li>
-                  <li><strong className="text-white">Provider Costs:</strong> Any token fees, metered billing, or subscription charges incurred through third-party APIs are billed directly to you by that provider.</li>
-                  <li><strong className="text-white">No Responsibility for Outages:</strong> Nooes is an independent client tool and is not responsible for upstream third-party service outages, rate limits, quota exhaustion, or policy changes.</li>
-                </ul>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 05. AI output disclaimer */}
@@ -178,12 +159,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 05</span> AI Output Disclaimer
                 </h2>
-                <p className="mb-3">
-                  AI models generate probabilistic completions. Outputs, diffs, code suggestions, terminal shell commands, and automated edits may contain inaccuracies, syntax bugs, security vulnerabilities, or unintended regressions.
-                </p>
-                <div className="p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm text-zinc-400 font-mono leading-relaxed">
-                  <strong className="text-white">Duty to Review:</strong> You must always review, test, and verify code diffs and shell commands proposed by Nooes before executing them or merging them into production branches.
-                </div>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 06. Acceptable use */}
@@ -191,15 +167,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 06</span> Acceptable Use
                 </h2>
-                <p className="mb-3">
-                  When using Nooes and its accompanying services, you agree not to:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li>Engage in unlawful activities, malicious exploitation, cyberattacks, or generation of malware.</li>
-                  <li>Abuse public share endpoints or hosted model relays by flooding, scraping, or launching denial-of-service attempts.</li>
-                  <li>Interfere with, tamper with, or attack our public website infrastructure.</li>
-                  <li>Violate the acceptable use or safety policies of your configured model providers.</li>
-                </ul>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 07. Share links and hosted features */}
@@ -207,13 +175,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 07</span> Share Links &amp; Hosted Features
                 </h2>
-                <p className="mb-3">
-                  If you choose to publish a debugging session using the optional <code className="text-xs bg-zinc-950 px-1.5 py-0.5 rounded border border-border text-zinc-300">/share</code> command:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-zinc-400 pl-2 text-sm">
-                  <li>You assume sole responsibility for the contents of the session snapshot you publish (including making sure you do not publish confidential or proprietary materials without team permission).</li>
-                  <li>We reserve the right to remove, unpublish, or block any share link that violates law, exhibits abusive content, or infringes intellectual property.</li>
-                </ul>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 08. Trademarks and brand */}
@@ -221,12 +183,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 08</span> Trademarks &amp; Brand Assets
                 </h2>
-                <p className="mb-3">
-                  The &ldquo;Nooes&rdquo; name, logo, iconography, wordmarks, and trade dress are proprietary trademarks.
-                </p>
-                <p className="text-sm text-zinc-400">
-                  You may not use our brand marks to imply official endorsement or sponsorship of third-party products without written authorization. For guidelines on proper usage, review our <Link href="/brand" className="text-white underline hover:text-zinc-400">Brand Guidelines</Link>.
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 09. No warranty and limitation of liability */}
@@ -234,14 +191,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 09</span> Disclaimer of Warranty &amp; Limitation of Liability
                 </h2>
-                <div className="p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm font-mono text-zinc-400 uppercase leading-relaxed space-y-3">
-                  <p>
-                    THE SOFTWARE AND SERVICES ARE PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT.
-                  </p>
-                  <p>
-                    IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, LOSS OF DATA, CORRUPTION OF CODE, SYSTEM DOWNTIME, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-                  </p>
-                </div>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 10. Termination of access to hosted features */}
@@ -249,9 +199,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 10</span> Termination of Hosted Access
                 </h2>
-                <p className="text-zinc-400">
-                  We reserve the right to suspend, terminate, or restrict access to hosted services (including share link rendering, free relays, and download portals) for any user or IP address found abusing our infrastructure or violating these Terms. Access to the local desktop application is governed by the applicable software license.
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 11. Governing law and disputes */}
@@ -259,9 +207,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 11</span> Governing Law &amp; Dispute Resolution
                 </h2>
-                <p className="text-zinc-400">
-                  These Terms are governed by and construed in accordance with the laws of [FILL: governing law — country and state], without regard to conflict of law principles. Any dispute arising from these terms or hosted services shall be resolved through good-faith negotiation, or submitted to the competent courts of [FILL: jurisdiction].
-                </p>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
               {/* 12. Changes to these terms and contact email */}
@@ -269,14 +215,7 @@ export default function TermsPage() {
                 <h2 className="text-base sm:text-lg font-mono font-semibold text-white mb-3">
                   <span className="text-zinc-600">// 12</span> Changes &amp; Contact Information
                 </h2>
-                <p className="mb-4">
-                  We may periodically revise these Terms of Service. Notice of substantive updates will be reflected in the &ldquo;Last updated&rdquo; timestamp at the top of this page.
-                </p>
-                <div className="p-4 rounded border border-border bg-zinc-950 font-mono text-xs sm:text-sm space-y-2 text-zinc-400">
-                  <p><span className="text-zinc-600">Legal Inquiries:</span> <a href="mailto:legal@nooes.dev" className="text-white underline hover:text-zinc-400">legal@nooes.dev</a></p>
-                  <p><span className="text-zinc-600">Privacy Desk:</span> <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a></p>
-                  <p><span className="text-zinc-600">Privacy Policy:</span> <Link href="/privacy" className="text-white underline hover:text-zinc-400">Read our Privacy Policy &rarr;</Link></p>
-                </div>
+                <p className="mb-3">[FILL: to be written by a lawyer before launch]</p>
               </section>
 
             </article>
