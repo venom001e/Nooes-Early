@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nooes — Code Less. Build More.",
+  title: "Nooes",
   description: "Nooes is an AI-powered software engineering platform designed to help developers build software more efficiently directly inside their project.",
   icons: {
     icon: [

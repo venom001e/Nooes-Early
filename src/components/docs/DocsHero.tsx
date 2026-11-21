@@ -42,7 +42,7 @@ export function DocsHero() {
               </span>
             </div>
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground leading-snug">
-              Think in Code. <span className="text-brand-text">Build Beyond.</span>
+              An AI coding IDE.
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
               Nooes is an AI coding IDE with an agent that plans, edits and tests your code.
