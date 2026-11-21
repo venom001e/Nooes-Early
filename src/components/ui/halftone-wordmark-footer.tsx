@@ -82,7 +82,7 @@ const PRESETS: { [K in HalftonePreset]: HalftonePalette } = {
 const DEFAULT_COLUMNS: FooterColumn[] = [
   { title: "Work", links: [{ label: "Index" }, { label: "Archive" }, { label: "Journal" }] },
   { title: "Studio", links: [{ label: "About" }, { label: "Process" }, { label: "Careers" }] },
-  { title: "Contact", links: [{ label: "support@nooes.ai" }, { label: "+47 22 00 41 00" }] },
+  { title: "Contact", links: [{ label: "hello@halden.co" }, { label: "+47 22 00 41 00" }] },
 ]
 
 const SANS_STACK = '"Inter Tight", "Inter Variable", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif'

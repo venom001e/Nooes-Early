@@ -4,11 +4,11 @@ import { useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import HalftoneWordmarkFooter from '@/components/ui/halftone-wordmark-footer';
 
-const emptyListener = () => () => {};
+const emptySubscribe = () => () => {};
 
 export default function HalftoneFooterPortal() {
   const isClient = useSyncExternalStore(
-    emptyListener,
+    emptySubscribe,
     () => true,
     () => false
   );
@@ -23,7 +23,7 @@ export default function HalftoneFooterPortal() {
       <HalftoneWordmarkFooter
         wordmark="Nooes"
         label="Nooes"
-        meta="©2026 · An AI coding IDE"
+        meta="©2026 · The AI Software Engineering Platform"
         preset="night"
         height="560px"
         dotGap={5}
@@ -39,6 +39,7 @@ export default function HalftoneFooterPortal() {
               { label: 'Features', href: '/features' },
               { label: 'Pricing', href: '/pricing' },
               { label: 'Desktop App', href: '/desktop' },
+              { label: 'Models', href: '/models' },
             ],
           },
           {
@@ -46,12 +47,16 @@ export default function HalftoneFooterPortal() {
             links: [
               { label: 'Docs', href: '/docs' },
               { label: 'Changelog', href: '/changelog' },
+              { label: 'Skills', href: '/skills' },
+              { label: 'Learn', href: '/learn' },
             ],
           },
           {
             title: 'Company',
             links: [
               { label: 'About', href: '/about' },
+              { label: 'Blog', href: '/blog' },
+              { label: 'Careers', href: '/careers' },
               { label: 'Contact', href: '/contact' },
             ],
           },
