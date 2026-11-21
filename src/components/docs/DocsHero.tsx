@@ -130,20 +130,12 @@ export function DocsHero() {
             </div>
           ) : (
             <div className="space-y-3">
-              <p className="text-xs text-muted-foreground">
-                Standalone native window for macOS (Apple Silicon & Intel), Windows x64, and Linux.
-              </p>
-              <div className="flex items-center justify-between gap-3 bg-zinc-950 border border-zinc-800 rounded-lg px-3.5 py-2.5 text-xs text-zinc-200">
-                <span className="font-mono text-xs text-muted-foreground truncate">
-                  nooes-desktop-beta.dmg / .exe / .deb
-                </span>
-                <Link
-                  href="/desktop"
-                  className="text-xs font-mono font-bold px-3 py-1 rounded bg-brand text-brand-foreground hover:opacity-90 transition-opacity shrink-0"
-                >
-                  Download
-                </Link>
-              </div>
+              <a
+                href="mailto:support@nooes.ai"
+                className="text-xs font-mono font-bold px-3 py-1 rounded bg-brand text-brand-foreground hover:opacity-90 transition-opacity shrink-0"
+              >
+                Request early access
+              </a>
             </div>
           )}
         </div>
