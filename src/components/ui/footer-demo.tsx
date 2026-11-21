@@ -8,7 +8,7 @@ export default function HalftoneFooterDemo() {
       <HalftoneWordmarkFooter
         wordmark="Nooes"
         label="Nooes"
-        meta="©2026 · The AI Software Engineering Platform"
+        meta="©2026 · An AI coding IDE"
       />
     </div>
   )
