@@ -4,15 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import SiteInteractions from "@/components/sites/nooes/SiteInteractions";
 
-interface FormData {
-  fullName: string;
-  role: string;
-  company: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
 const FAQS = [
   {
     q: "What is Nooes?",
@@ -33,70 +24,6 @@ const FAQS = [
 ];
 
 export default function EnterprisePage() {
-  const [formData, setFormData] = React.useState<FormData>({
-    fullName: "",
-    role: "",
-    company: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [status, setStatus] = React.useState<"idle" | "sending" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = React.useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    if (status === "error") {
-      setStatus("idle");
-      setErrorMessage("");
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Validation: All fields required
-    if (
-      !formData.fullName.trim() ||
-      !formData.role.trim() ||
-      !formData.company.trim() ||
-      !formData.email.trim() ||
-      !formData.phone.trim() ||
-      !formData.message.trim()
-    ) {
-      setStatus("error");
-      setErrorMessage("All fields are required.");
-      return;
-    }
-
-    // Email format check
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email.trim())) {
-      setStatus("error");
-      setErrorMessage("Invalid email format.");
-      return;
-    }
-
-    setStatus("sending");
-
-    try {
-      // Simulate submission endpoint
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      setStatus("success");
-      setFormData({
-        fullName: "",
-        role: "",
-        company: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch {
-      setStatus("error");
-      setErrorMessage("Internal server error.");
-    }
-  };
 
   return (
     <>
@@ -191,153 +118,24 @@ export default function EnterprisePage() {
               </p>
             </div>
 
-            {/* 2. Contact Form Section */}
+            {/* 2. Contact Section */}
             <div className="border border-border bg-black rounded-lg p-8 sm:p-12">
               <div className="mb-8 border-b border-border pb-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
-                  Connect with our team
+                  Contact us
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-500 font-mono">
-                  Tell us about your organization and requirements.
+                  Email us at support@nooes.ai.
                 </p>
               </div>
-
-              {status === "success" ? (
-                <div className="p-6 rounded border border-border bg-zinc-950 text-center space-y-3">
-                  <div className="text-sm sm:text-base font-semibold text-white">
-                    Message sent, we&apos;ll be in touch soon.
-                  </div>
-                  <p className="text-xs text-zinc-500 font-mono">
-                    A team member will reach out to your company email.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setStatus("idle")}
-                    className="mt-4 px-4 py-2 text-xs font-mono uppercase tracking-wider rounded border border-border bg-zinc-900 text-white hover:bg-zinc-800 transition-colors"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {status === "error" && (
-                    <div className="p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm text-white font-mono">
-                      {errorMessage}
-                    </div>
-                  )}
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Full Name */}
-                    <div className="space-y-2">
-                      <label htmlFor="fullName" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                        Full name *
-                      </label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        placeholder="Alex Morgan"
-                        className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors"
-                      />
-                    </div>
-
-                    {/* Role */}
-                    <div className="space-y-2">
-                      <label htmlFor="role" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                        Role *
-                      </label>
-                      <input
-                        type="text"
-                        id="role"
-                        name="role"
-                        value={formData.role}
-                        onChange={handleChange}
-                        placeholder="VP of Engineering / Tech Lead"
-                        className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Company */}
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                        Company *
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Acme Inc"
-                        className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors"
-                      />
-                    </div>
-
-                    {/* Company Email */}
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                        Company email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="name@company.com"
-                        className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                      Phone number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+1 234 567 8900"
-                      className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors"
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
-                      What problem are you trying to solve? *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="We need help with deploying autonomous agents inside our isolated developer clusters..."
-                      className="w-full px-3.5 py-2.5 rounded border border-border bg-zinc-950 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-400 transition-colors resize-y"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={status === "sending"}
-                      className="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-colors disabled:opacity-50 cursor-pointer"
-                    >
-                      {status === "sending" ? "Sending..." : "Send"}
-                    </button>
-                  </div>
-                </form>
-              )}
+              <div className="pt-2">
+                <a
+                  href="mailto:support@nooes.ai"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-colors"
+                >
+                  Contact us
+                </a>
+              </div>
             </div>
 
             {/* 3. FAQ Section */}
