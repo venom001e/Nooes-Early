@@ -22,7 +22,7 @@ const CAPABILITIES = [
   },
   {
     title: "Share Links",
-    subtitle: "Encrypted Trajectory Snapshots",
+    subtitle: "Session Snapshots",
     description: "Generate interactive read-only URLs to share full session traces and surgical diffs with your team for collaborative debugging.",
     icon: Share2,
     stat: "/share",

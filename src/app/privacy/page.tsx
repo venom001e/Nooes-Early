@@ -89,7 +89,7 @@ export default function PrivacyPage() {
                 Last updated: November 12, 2026
               </p>
               <div className="mt-4 p-4 rounded border border-border bg-zinc-950 text-xs sm:text-sm text-zinc-400 leading-relaxed font-mono">
-                <span className="text-white font-semibold">Notice:</span> Nooes is an autonomous, local-first developer tool. We do not operate a centralized source-code gateway. You maintain custody of your files, local environment, and provider credentials. Have your legal counsel review the specifics for your organization.
+                <span className="text-white font-semibold">Notice:</span> This policy is pending legal review before launch. [FILL: to be written by a lawyer before launch]
               </div>
             </div>
 
@@ -253,7 +253,7 @@ export default function PrivacyPage() {
 
             {/* Bottom Footer Navigation */}
             <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
-              <span>Nooes &middot; Local-First Autonomous AI Engineering</span>
+              <span>Nooes</span>
               <div className="flex items-center gap-4">
                 <Link href="/terms" className="hover:text-white underline underline-offset-4 transition-colors">
                   Terms of Service
