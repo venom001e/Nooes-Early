@@ -236,8 +236,8 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="mb-4">[FILL: to be written by a lawyer before launch]</p>
                 <div className="p-5 rounded border border-border bg-zinc-950 font-mono text-xs sm:text-sm space-y-2 text-zinc-400">
-                  <p><span className="text-zinc-600">Privacy Desk:</span> <a href="mailto:privacy@nooes.dev" className="text-white underline hover:text-zinc-400">privacy@nooes.dev</a></p>
-                  <p><span className="text-zinc-600">Security Reports:</span> <a href="mailto:security@nooes.dev" className="text-white underline hover:text-zinc-400">security@nooes.dev</a></p>
+                  <p><span className="text-zinc-600">Privacy Desk:</span> <a href="mailto:support@nooes.ai" className="text-white underline hover:text-zinc-400">support@nooes.ai</a></p>
+                  <p><span className="text-zinc-600">Security Reports:</span> <a href="mailto:support@nooes.ai" className="text-white underline hover:text-zinc-400">support@nooes.ai</a></p>
                   
                   <p><span className="text-zinc-600">Terms of Service:</span> <Link href="/terms" className="text-white underline hover:text-zinc-400">Terms of Service &rarr;</Link></p>
                 </div>

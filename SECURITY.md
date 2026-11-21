@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in Nooes, please report it privately to:
 
-`security@nooes.ai`
+`support@nooes.ai`
 
 Please include:
 - A description of the issue and potential impact
