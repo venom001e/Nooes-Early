@@ -19,6 +19,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to view the site.
 
+### Environment
+
+Copy `.env.example` to `.env.local` to configure environment variables:
+
+- `ALLOW_INDEXING` — Set to `true` only at launch to enable search engine indexing and sitemap generation. When unset or `false`, search engines are disallowed (`noindex, nofollow`).
+
 ### Production Build
 
 ```bash
