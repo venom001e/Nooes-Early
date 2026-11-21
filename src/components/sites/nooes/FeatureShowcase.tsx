@@ -17,10 +17,10 @@ interface FeatureTab {
 const tabs: FeatureTab[] = [
   {
     num: '01',
-    title: 'Interactive, headless, sandbox agents',
+    title: 'Plans and edits your code.',
     href: '/features#modes',
-    rightTitle: 'A mode for every moment.',
-    rightDesc: 'Interactive CLI. Headless `-p`, `--yolo`. Background sandbox.',
+    rightTitle: 'Plans and edits your code.',
+    rightDesc: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
     commands: [
       {
         input: 'nooes "Add Dark Mode and create user dashboard"',
@@ -38,10 +38,10 @@ const tabs: FeatureTab[] = [
   },
   {
     num: '02',
-    title: 'Skills, reviews, bundled agentic tools',
+    title: 'Edits and tests your code.',
     href: '/features#tools',
-    rightTitle: 'Built in.',
-    rightDesc: 'Plans, edits and tests code in your project.',
+    rightTitle: 'Edits and tests your code.',
+    rightDesc: 'Nooes is a desktop application.',
     commands: [
       {
         input: 'nooes "Fix the TypeError on checkout and retest"',
@@ -59,10 +59,10 @@ const tabs: FeatureTab[] = [
   },
   {
     num: '03',
-    title: 'Context engineering with /agents, /memory',
+    title: 'Tests your code.',
     href: '/features#memory',
-    rightTitle: "It remembers. So you don't have to.",
-    rightDesc: 'Custom /agents and persistent /memory — carried across every session.',
+    rightTitle: 'Tests your code.',
+    rightDesc: 'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
     commands: [
       {
         input: 'nooes run "npm run check"',
