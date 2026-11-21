@@ -37,6 +37,8 @@ export interface FooterColumn {
 
 export interface HalftoneWordmarkFooterProps {
   /** The giant word printed in dots. Lowercase reads best. */
+  logoSrc?: string
+  /** The giant word printed in dots if logoSrc is not provided. */
   wordmark?: string
   /** Top-left studio line. */
   label?: string
@@ -180,6 +182,7 @@ const HWF_CSS = `
 `
 
 export default function HalftoneWordmarkFooter({
+  logoSrc,
   wordmark = "halden",
   label = "Halden Studio",
   meta = "©2026 · Oslo / Lisbon",
@@ -202,7 +205,29 @@ export default function HalftoneWordmarkFooter({
   const rootRef = React.useRef(null as HTMLElement | null)
   const canvasRef = React.useRef(null as HTMLCanvasElement | null)
   const opts = React.useRef({ colors, dotGap, radius, crop, grain, interactive, fontFamily, fontWeight, wordmark })
-  const key = [wordmark, dotGap, crop, grain, fontFamily, fontWeight, colors.background, colors.ink, colors.warm].join("|")
+  const key = [logoSrc, wordmark, dotGap, crop, grain, fontFamily, fontWeight, colors.background, colors.ink, colors.warm].join("|")
+
+  const [logoReady, setLogoReady] = React.useState(false)
+  const logoRef = React.useRef<HTMLImageElement | null>(null)
+
+  React.useEffect(() => {
+    if (!logoSrc) {
+      logoRef.current = null
+      setLogoReady(false)
+      return
+    }
+    const img = new Image()
+    img.src = logoSrc
+    const onDone = () => {
+      logoRef.current = img
+      setLogoReady(true)
+    }
+    if (img.complete && img.naturalWidth > 0) {
+      onDone()
+    } else {
+      img.onload = onDone
+    }
+  }, [logoSrc])
 
   React.useEffect(() => {
     opts.current = { colors, dotGap, radius, crop, grain, interactive, fontFamily, fontWeight, wordmark }
@@ -244,26 +269,38 @@ export default function HalftoneWordmarkFooter({
       mask.height = h
       const m = mask.getContext("2d", { willReadFrequently: true })
       if (!m) return
-      const face = o.fontWeight + " 100px " + o.fontFamily
-      m.font = face
-      const word = o.wordmark || " "
-      // If crop is <= 0, fit the full wordmark with safe padding so no letter is clipped
-      const targetW = o.crop <= 0 ? w * 0.88 : w * 0.98
-      const measured = m.measureText(word).width
-      const fitByWidth = hwfFitSize(measured, targetW)
-      const maxFitHeight = Math.max(80, (h - 170) * 1.05)
-      const fit = o.crop <= 0 ? Math.min(fitByWidth, maxFitHeight) : fitByWidth
+      const logoImg = logoRef.current
+      if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
+        const aspect = logoImg.naturalWidth / logoImg.naturalHeight
+        const maxWByHeight = Math.max(80, h - 160) * aspect * 1.15
+        const targetW = Math.min(w * (o.crop <= 0 ? 0.88 : 0.96), maxWByHeight)
+        const targetH = targetW / aspect
+        const logoX = Math.round((w - targetW) / 2)
+        const logoY = o.crop <= 0
+          ? Math.round(h - targetH - Math.max(20, h * 0.05))
+          : Math.round(h - targetH * (1 - Math.min(0.5, Math.max(0, o.crop))))
+        m.drawImage(logoImg, logoX, logoY, targetW, targetH)
+      } else {
+        const face = o.fontWeight + " 100px " + o.fontFamily
+        m.font = face
+        const word = o.wordmark || " "
+        const targetW = o.crop <= 0 ? w * 0.88 : w * 0.98
+        const measured = m.measureText(word).width
+        const fitByWidth = hwfFitSize(measured, targetW)
+        const maxFitHeight = Math.max(80, (h - 170) * 1.05)
+        const fit = o.crop <= 0 ? Math.min(fitByWidth, maxFitHeight) : fitByWidth
 
-      m.font = o.fontWeight + " " + fit + "px " + o.fontFamily
-      const box = m.measureText(word)
-      const cap = box.actualBoundingBoxAscent || fit * 0.72
-      const desc = box.actualBoundingBoxDescent || fit * 0.18
+        m.font = o.fontWeight + " " + fit + "px " + o.fontFamily
+        const box = m.measureText(word)
+        const cap = box.actualBoundingBoxAscent || fit * 0.72
+        const desc = box.actualBoundingBoxDescent || fit * 0.18
 
-      m.fillStyle = "#000"
-      m.textBaseline = "alphabetic"
-      const textX = Math.max(0, (w - box.width) / 2)
-      const textY = o.crop <= 0 ? h - desc - Math.max(20, h * 0.05) : h + cap * Math.min(0.6, Math.max(0, o.crop))
-      m.fillText(word, textX, textY)
+        m.fillStyle = "#000"
+        m.textBaseline = "alphabetic"
+        const textX = Math.max(0, (w - box.width) / 2)
+        const textY = o.crop <= 0 ? h - desc - Math.max(20, h * 0.05) : h + cap * Math.min(0.6, Math.max(0, o.crop))
+        m.fillText(word, textX, textY)
+      }
       const img = m.getImageData(0, 0, w, h).data
 
       const gap = Math.max(3, o.dotGap)
@@ -455,7 +492,7 @@ export default function HalftoneWordmarkFooter({
       root.removeEventListener("pointerdown", onDown)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key])
+  }, [key, logoReady])
 
   const toTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
