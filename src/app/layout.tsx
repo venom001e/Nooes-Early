@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-css-tags */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,7 +58,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/desktop-page-_I461akd.css" />
         <link rel="preload" href="/fonts/geist-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col bg-black text-foreground">{children}</body>
+      <body className="min-h-full flex flex-col bg-black text-foreground">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

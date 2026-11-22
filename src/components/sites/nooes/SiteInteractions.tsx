@@ -309,6 +309,13 @@ export default function SiteInteractions() {
               About
             </Link>
             <Link
+              href="/early-access"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
+            >
+              Early access
+            </Link>
+            <Link
               href="/changelog"
               onClick={() => setMobileMenuOpen(false)}
               className="text-zinc-300 hover:text-white transition-colors py-2 border-b border-zinc-800/50"
