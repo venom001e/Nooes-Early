@@ -103,29 +103,42 @@ export async function sendConfirmationEmail(input: {
   return ok ? { ok: true, mode: 'live' } : { ok: false, reason: 'provider-error' };
 }
 
-export async function sendVisitorReceipt(input: {
-  to: string;
-  name: string | null;
-}): Promise<boolean> {
+export async function sendVisitorReceipt(input: { to: string }): Promise<boolean> {
   if (!emailConfigured()) return false;
 
-  const safeName = escapeHtml(input.name ?? 'there');
   return sendEmail({
     to: input.to,
-    subject: 'We received your Nooes early access request',
+    subject: "You're on the Nooes early access list",
     text: [
-      `Hi ${input.name ?? 'there'},`,
+      'Hi,',
       '',
-      'Thanks for requesting early access to Nooes.',
-      'We’ll email you when it is available.',
+      'Thanks for signing up for Nooes early access.',
       '',
-      '— Nooes',
+      'Nooes is an AI coding IDE with an agent that plans, edits and tests your code. We are opening access gradually, so it may take some time before your invite arrives.',
+      '',
+      'What happens next:',
+      '- We will email you when your access is ready.',
+      '- We will only use this email address to send you updates about Nooes.',
+      '',
+      'You are receiving this email because this address was used to join the Nooes early access list. If that was not you, just reply to this email and we will remove you right away.',
+      '',
+      'Questions? Reply to this email and we will get back to you.',
+      '',
+      'The Nooes team',
     ].join('\n'),
     html: [
-      '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#18181b">',
-      `<p style="margin:0 0 20px">Hi ${safeName},</p>`,
-      '<p style="margin:0 0 20px">Thanks for requesting early access to Nooes. We’ll email you when it is available.</p>',
-      '<p style="margin:0">— Nooes</p>',
+      '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#18181b;max-width:600px">',
+      '<p style="margin:0 0 20px">Hi,</p>',
+      '<p style="margin:0 0 20px">Thanks for signing up for Nooes early access.</p>',
+      '<p style="margin:0 0 20px">Nooes is an AI coding IDE with an agent that plans, edits and tests your code. We are opening access gradually, so it may take some time before your invite arrives.</p>',
+      '<p style="margin:0 0 8px"><strong>What happens next:</strong></p>',
+      '<ul style="margin:0 0 20px;padding-left:20px">',
+      '<li style="margin:0 0 6px">We will email you when your access is ready.</li>',
+      '<li>We will only use this email address to send you updates about Nooes.</li>',
+      '</ul>',
+      '<p style="margin:0 0 20px">You are receiving this email because this address was used to join the Nooes early access list. If that was not you, just reply to this email and we will remove you right away.</p>',
+      '<p style="margin:0 0 20px">Questions? Reply to this email and we will get back to you.</p>',
+      '<p style="margin:0">The Nooes team</p>',
       '</div>',
     ].join(''),
   });

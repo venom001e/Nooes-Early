@@ -110,7 +110,7 @@ export default function EarlyAccessForm({ accessKey }: EarlyAccessFormProps) {
         return;
       }
 
-      await sendVisitorEmail({ email, name: name || null });
+      await sendVisitorEmail({ email });
 
       track('early_access_request');
       setState({

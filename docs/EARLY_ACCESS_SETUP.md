@@ -38,7 +38,7 @@ Never expose `SUPABASE_SERVICE_ROLE_KEY`, `EARLY_ACCESS_TOKEN_SECRET`, or `RESEN
 
 Submissions are delivered to the mailbox linked to the Web3Forms access key. Web3Forms also stores submissions in its dashboard, where they can be reviewed and exported. The notification email uses the subject `New early access request — Nooes` and sets the visitor's email as the reply-to address.
 
-Separately, Resend sends the visitor a receipt with the subject `We received your Nooes early access request`. This is a receipt only — the visitor is not asked to confirm anything. If Resend is not configured, the Web3Forms submission still succeeds and the visitor receipt is skipped.
+Separately, Resend sends the visitor a receipt with the subject `You're on the Nooes early access list`. This is a receipt only — the visitor is not asked to confirm anything. If Resend is not configured, the Web3Forms submission still succeeds and the visitor receipt is skipped.
 
 ## Supabase table
 
