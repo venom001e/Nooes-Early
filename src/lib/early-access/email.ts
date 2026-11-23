@@ -103,44 +103,62 @@ export async function sendConfirmationEmail(input: {
   return ok ? { ok: true, mode: 'live' } : { ok: false, reason: 'provider-error' };
 }
 
+const VISITOR_RECEIPT_HTML = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="supported-color-schemes" content="dark light">
+<title>You're on the Nooes list</title>
+</head>
+<body style="margin:0;padding:0;background-color:#0A0A0A;" bgcolor="#0A0A0A">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#0A0A0A;">We'll email you when your invite is ready.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0A0A0A" style="background-color:#0A0A0A;">
+  <tr>
+    <td align="center" style="padding:64px 24px;">
+      <table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:480px;">
+        <tr>
+          <td style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:#7F8E9A;padding-bottom:44px;">Nooes</td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:28px;line-height:1.25;font-weight:500;color:#E5E4E2;padding-bottom:16px;">You're on the list.</td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B8B7B4;padding-bottom:36px;">Thanks for joining Nooes early access. We'll email you when your invite is ready.</td>
+        </tr>
+        <tr>
+          <td style="border-top:1px solid #2A3238;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.6;color:#7F8E9A;padding-top:24px;">Nooes is an AI coding IDE with an agent that plans, edits and tests your code.</td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#7F8E9A;padding-top:32px;">You're receiving this because this address joined the Nooes early access list. Not you? Reply to this email and we'll remove it.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>`;
+
 export async function sendVisitorReceipt(input: { to: string }): Promise<boolean> {
   if (!emailConfigured()) return false;
 
   return sendEmail({
     to: input.to,
-    subject: "You're on the Nooes early access list",
+    subject: "You're on the Nooes list",
     text: [
-      'Hi,',
+      'NOOES',
       '',
-      'Thanks for signing up for Nooes early access.',
+      "You're on the list.",
       '',
-      'Nooes is an AI coding IDE with an agent that plans, edits and tests your code. We are opening access gradually, so it may take some time before your invite arrives.',
+      "Thanks for joining Nooes early access. We'll email you when your invite is ready.",
       '',
-      'What happens next:',
-      '- We will email you when your access is ready.',
-      '- We will only use this email address to send you updates about Nooes.',
+      '--',
+      'Nooes is an AI coding IDE with an agent that plans, edits and tests your code.',
       '',
-      'You are receiving this email because this address was used to join the Nooes early access list. If that was not you, just reply to this email and we will remove you right away.',
-      '',
-      'Questions? Reply to this email and we will get back to you.',
-      '',
-      'The Nooes team',
+      "You're receiving this because this address joined the Nooes early access list. Not you? Reply to this email and we'll remove it.",
     ].join('\n'),
-    html: [
-      '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#18181b;max-width:600px">',
-      '<p style="margin:0 0 20px">Hi,</p>',
-      '<p style="margin:0 0 20px">Thanks for signing up for Nooes early access.</p>',
-      '<p style="margin:0 0 20px">Nooes is an AI coding IDE with an agent that plans, edits and tests your code. We are opening access gradually, so it may take some time before your invite arrives.</p>',
-      '<p style="margin:0 0 8px"><strong>What happens next:</strong></p>',
-      '<ul style="margin:0 0 20px;padding-left:20px">',
-      '<li style="margin:0 0 6px">We will email you when your access is ready.</li>',
-      '<li>We will only use this email address to send you updates about Nooes.</li>',
-      '</ul>',
-      '<p style="margin:0 0 20px">You are receiving this email because this address was used to join the Nooes early access list. If that was not you, just reply to this email and we will remove you right away.</p>',
-      '<p style="margin:0 0 20px">Questions? Reply to this email and we will get back to you.</p>',
-      '<p style="margin:0">The Nooes team</p>',
-      '</div>',
-    ].join(''),
+    html: VISITOR_RECEIPT_HTML,
   });
 }
 
