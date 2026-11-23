@@ -3,8 +3,8 @@
 The `/early-access` form is delivered through Web3Forms:
 
 1. A visitor enters their details and agrees to receive updates.
-2. The browser posts the request to `https://api.web3forms.com/submit`.
-3. Web3Forms emails the submission to the mailbox configured for the access key.
+2. The browser posts the request to `https://api.web3forms.com/submit`, which emails the submission to the mailbox configured for the access key.
+3. A server action then asks Resend to email a receipt to the address the visitor entered.
 
 No password is collected. Full account creation belongs to a later login/signup stage.
 
@@ -17,7 +17,11 @@ Add these in Vercel (or the hosting environment). Replace every `[FILL]` before 
 | Variable | Required | Value |
 | --- | --- | --- |
 | `WEB3FORMS_ACCESS_KEY` | Yes | Web3Forms access key for the form's destination mailbox |
+| `RESEND_API_KEY` | Yes | `[FILL]` — Resend API key for the visitor receipt |
+| `EARLY_ACCESS_FROM_EMAIL` | Yes | A sender address on the domain verified in Resend. Currently `support@nooes.dev` — confirmed working by the Resend API. |
 | `NEXT_PUBLIC_SITE_URL` | No | `[FILL]` — defaults to `https://nooes.ai` |
+
+Resend's test domain (`onboarding@resend.dev`) can only send to the account owner's own address. To email visitors, `EARLY_ACCESS_FROM_EMAIL` must use a domain verified in Resend. `nooes.ai` and `nooes.com` are not verified for this API key; `nooes.dev` is verified. Do not change this value without verifying the new domain in Resend first.
 
 The older waitlist backend remains in the repository but is not used by the form. If it is enabled again later, these apply:
 
@@ -26,8 +30,6 @@ The older waitlist backend remains in the repository but is not used by the form
 | `SUPABASE_URL` | Yes | `[FILL]` — Supabase project REST URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | Yes | `[FILL]` — server-only service role key |
 | `EARLY_ACCESS_TOKEN_SECRET` | Yes | `[FILL]` — long random secret used to hash confirmation tokens |
-| `RESEND_API_KEY` | Yes | `[FILL]` |
-| `EARLY_ACCESS_FROM_EMAIL` | Yes | `[FILL]` — verified sender address in Resend |
 | `EARLY_ACCESS_NOTIFY_EMAIL` | No | `[FILL]` — owner address for new-request notifications |
 
 Never expose `SUPABASE_SERVICE_ROLE_KEY`, `EARLY_ACCESS_TOKEN_SECRET`, or `RESEND_API_KEY` to the client.
@@ -35,6 +37,8 @@ Never expose `SUPABASE_SERVICE_ROLE_KEY`, `EARLY_ACCESS_TOKEN_SECRET`, or `RESEN
 ## Where submissions go
 
 Submissions are delivered to the mailbox linked to the Web3Forms access key. Web3Forms also stores submissions in its dashboard, where they can be reviewed and exported. The notification email uses the subject `New early access request — Nooes` and sets the visitor's email as the reply-to address.
+
+Separately, Resend sends the visitor a receipt with the subject `We received your Nooes early access request`. This is a receipt only — the visitor is not asked to confirm anything. If Resend is not configured, the Web3Forms submission still succeeds and the visitor receipt is skipped.
 
 ## Supabase table
 
@@ -62,7 +66,7 @@ If `EARLY_ACCESS_TOKEN_SECRET` changes, previously issued confirmation links sto
 
 ## Local development
 
-Set `WEB3FORMS_ACCESS_KEY` in `.env.local` to test real delivery from `npm run dev`. With no key set, the form shows an unavailable message instead of pretending it sent anything.
+Set `WEB3FORMS_ACCESS_KEY` in `.env.local` to test real delivery from `npm run dev`. With no key set, the form shows an unavailable message instead of pretending it sent anything. Set `RESEND_API_KEY` and a verified `EARLY_ACCESS_FROM_EMAIL` to test the visitor receipt.
 
 The older waitlist backend, when configured with production credentials, writes development submissions to `.data/early-access-signups.jsonl`. `.data/` is ignored by Git.
 
@@ -102,7 +106,7 @@ The form requires explicit consent and links to `/privacy`. The email-list secti
 
 ## Current limitations
 
-- Web3Forms delivery has no double opt-in confirmation step. The `/early-access/confirm` route belongs to the older waitlist backend.
+- Neither Web3Forms nor the Resend receipt uses a double opt-in confirmation step. The `/early-access/confirm` route belongs to the older waitlist backend.
 - Web3Forms applies its own free-plan monthly submission limit and spam filtering.
 - There is no login, account creation, or invite-code redemption yet.
 - The privacy policy text is not final.

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { track } from '@vercel/analytics';
+import { sendVisitorEmail } from '@/app/early-access/visitor-action';
 import type { WaitlistFieldErrors, WaitlistState } from '@/lib/early-access/types';
 
 const initialState: WaitlistState = { status: 'idle', message: '' };
@@ -108,6 +109,8 @@ export default function EarlyAccessForm({ accessKey }: EarlyAccessFormProps) {
         });
         return;
       }
+
+      await sendVisitorEmail({ email, name: name || null });
 
       track('early_access_request');
       setState({

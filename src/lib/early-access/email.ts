@@ -103,6 +103,34 @@ export async function sendConfirmationEmail(input: {
   return ok ? { ok: true, mode: 'live' } : { ok: false, reason: 'provider-error' };
 }
 
+export async function sendVisitorReceipt(input: {
+  to: string;
+  name: string | null;
+}): Promise<boolean> {
+  if (!emailConfigured()) return false;
+
+  const safeName = escapeHtml(input.name ?? 'there');
+  return sendEmail({
+    to: input.to,
+    subject: 'We received your Nooes early access request',
+    text: [
+      `Hi ${input.name ?? 'there'},`,
+      '',
+      'Thanks for requesting early access to Nooes.',
+      'We’ll email you when it is available.',
+      '',
+      '— Nooes',
+    ].join('\n'),
+    html: [
+      '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#18181b">',
+      `<p style="margin:0 0 20px">Hi ${safeName},</p>`,
+      '<p style="margin:0 0 20px">Thanks for requesting early access to Nooes. We’ll email you when it is available.</p>',
+      '<p style="margin:0">— Nooes</p>',
+      '</div>',
+    ].join(''),
+  });
+}
+
 export async function sendOwnerNotification(input: {
   email: string;
   name: string | null;
