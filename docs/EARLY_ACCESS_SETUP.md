@@ -1,17 +1,25 @@
 # Early access setup
 
-The `/early-access` page uses a double opt-in waitlist:
+The `/early-access` form is delivered through Web3Forms:
 
-1. A visitor submits their email and agrees to receive updates.
-2. Nooes stores the request as `pending` and sends a confirmation link.
-3. The visitor opens `/early-access/confirm?token=…` and confirms explicitly.
-4. The record becomes `confirmed`.
+1. A visitor enters their details and agrees to receive updates.
+2. The browser posts the request to `https://api.web3forms.com/submit`.
+3. Web3Forms emails the submission to the mailbox configured for the access key.
 
 No password is collected. Full account creation belongs to a later login/signup stage.
 
+Web3Forms is called from the browser because its free plan documents that server-side submissions require a paid plan and server IP whitelisting. Its access key is documented as public by design — it is an alias for the destination mailbox, not a secret. The free plan allows 250 submissions per month.
+
 ## Production environment
 
-Add these in Vercel (or the hosting environment). Replace every `[FILL]` before launch. Production fails closed if any required value is missing.
+Add these in Vercel (or the hosting environment). Replace every `[FILL]` before launch.
+
+| Variable | Required | Value |
+| --- | --- | --- |
+| `WEB3FORMS_ACCESS_KEY` | Yes | Web3Forms access key for the form's destination mailbox |
+| `NEXT_PUBLIC_SITE_URL` | No | `[FILL]` — defaults to `https://nooes.ai` |
+
+The older waitlist backend remains in the repository but is not used by the form. If it is enabled again later, these apply:
 
 | Variable | Required | Value |
 | --- | --- | --- |
@@ -20,10 +28,13 @@ Add these in Vercel (or the hosting environment). Replace every `[FILL]` before 
 | `EARLY_ACCESS_TOKEN_SECRET` | Yes | `[FILL]` — long random secret used to hash confirmation tokens |
 | `RESEND_API_KEY` | Yes | `[FILL]` |
 | `EARLY_ACCESS_FROM_EMAIL` | Yes | `[FILL]` — verified sender address in Resend |
-| `NEXT_PUBLIC_SITE_URL` | No | `[FILL]` — defaults to `https://nooes.ai` |
 | `EARLY_ACCESS_NOTIFY_EMAIL` | No | `[FILL]` — owner address for new-request notifications |
 
 Never expose `SUPABASE_SERVICE_ROLE_KEY`, `EARLY_ACCESS_TOKEN_SECRET`, or `RESEND_API_KEY` to the client.
+
+## Where submissions go
+
+Submissions are delivered to the mailbox linked to the Web3Forms access key. Web3Forms also stores submissions in its dashboard, where they can be reviewed and exported. The notification email uses the subject `New early access request — Nooes` and sets the visitor's email as the reply-to address.
 
 ## Supabase table
 
@@ -51,19 +62,20 @@ If `EARLY_ACCESS_TOKEN_SECRET` changes, previously issued confirmation links sto
 
 ## Local development
 
-With no production credentials configured, submissions are written to `.data/early-access-signups.jsonl`, and the form shows a local confirmation link instead of pretending an email was sent. In development the link uses the local request origin unless `NEXT_PUBLIC_SITE_URL` is set. This path is development-only. `.data/` is ignored by Git.
+Set `WEB3FORMS_ACCESS_KEY` in `.env.local` to test real delivery from `npm run dev`. With no key set, the form shows an unavailable message instead of pretending it sent anything.
 
-Resend is used through its REST API. Set `RESEND_API_KEY` and `EARLY_ACCESS_FROM_EMAIL` to test live delivery locally.
+The older waitlist backend, when configured with production credentials, writes development submissions to `.data/early-access-signups.jsonl`. `.data/` is ignored by Git.
 
 ## Analytics and reporting
 
 Vercel Analytics (`@vercel/analytics`) is installed in the root layout. It needs no extra credentials in a Vercel deployment.
 
-- Page views for `/early-access` and `/early-access/confirm` are recorded automatically.
-- The custom event `early_access_request` fires after a successful form submission.
-- The custom event `early_access_confirm` fires after a successful confirmation.
+- Page views for `/early-access` are recorded automatically.
+- The custom event `early_access_request` fires after a successful Web3Forms submission.
 
-Open the Vercel project → **Analytics** → **Page Views** for visitor counts and **Events** for the two funnel events. Event counts are attempts, not confirmed unique people; use the database query below for exact records.
+Open the Vercel project → **Analytics** → **Page Views** for visitor counts and **Events** for the request event. Event counts are submissions, not unique people.
+
+For exact submissions, open the Web3Forms dashboard for the form linked to the access key. Web3Forms also exposes a paid Submissions API for programmatic counts. The Supabase queries below apply only to the older waitlist backend.
 
 For exact signup counts, run this in the Supabase SQL editor:
 
@@ -90,7 +102,8 @@ The form requires explicit consent and links to `/privacy`. The email-list secti
 
 ## Current limitations
 
-- Rate limiting is in-memory per server instance (`5 requests / hour / IP`). Use an edge or shared store for a multi-instance production deployment.
+- Web3Forms delivery has no double opt-in confirmation step. The `/early-access/confirm` route belongs to the older waitlist backend.
+- Web3Forms applies its own free-plan monthly submission limit and spam filtering.
 - There is no login, account creation, or invite-code redemption yet.
 - The privacy policy text is not final.
-- Confirmation links expire after 7 days.
+- The older waitlist backend's rate limiting is in-memory per server instance (`5 requests / hour / IP`).

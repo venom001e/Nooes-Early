@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function EarlyAccessPage() {
+  const web3FormsAccessKey = process.env.WEB3FORMS_ACCESS_KEY ?? '';
+
   return (
     <EarlyAccessShell>
       <div className="flex min-h-[calc(100vh-220px)] w-full max-w-6xl flex-col justify-between gap-16">
@@ -17,13 +19,13 @@ export default function EarlyAccessPage() {
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-500">
               {'// Tell us a little about you'}
             </p>
-            <EarlyAccessForm />
+            <EarlyAccessForm accessKey={web3FormsAccessKey} />
           </section>
 
           <section className="order-1 lg:order-2 lg:pl-12">
-            <h1 className="text-6xl font-bold leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl">
+            <h1 className="text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl">
               Early
-              <span className="block pl-10 lg:pl-24">access</span>
+              <span className="block pl-6 sm:pl-10 lg:pl-24">access</span>
             </h1>
             <p className="mt-8 max-w-md text-sm leading-7 text-zinc-400">
               It is important for us to keep in touch with you. If you would like early access to

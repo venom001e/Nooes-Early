@@ -14,10 +14,10 @@ export function NotFound() {
 		<div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background text-foreground">
 			<Empty>
 				<EmptyHeader>
-					<EmptyTitle className="mask-b-from-20% mask-b-to-80% font-extrabold text-9xl">
+					<EmptyTitle className="mask-b-from-20% mask-b-to-80% font-extrabold text-6xl sm:text-9xl">
 						404
 					</EmptyTitle>
-					<EmptyDescription className="-mt-8 text-nowrap text-foreground/80">
+					<EmptyDescription className="-mt-4 sm:-mt-8 text-wrap text-foreground/80">
 						The page you&apos;re looking for might have been <br />
 						moved or doesn&apos;t exist.
 					</EmptyDescription>

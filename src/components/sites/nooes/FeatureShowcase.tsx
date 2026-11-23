@@ -143,16 +143,16 @@ export default function FeatureShowcase() {
 
       {/* MOBILE TAB LIST (< lg) */}
       <div className="w-full lg:hidden">
-        <div className="grid grid-cols-2 auto-rows-fr relative border-b border-border">
-          <div className="absolute w-px h-full top-0 left-1/2 -translate-x-1/2 bg-border z-0 pointer-events-none" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 auto-rows-fr relative border-b border-border">
+          <div className="absolute hidden sm:block w-px h-full top-0 left-1/3 bg-border z-0 pointer-events-none" />
           {tabs.map((tab, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => setActiveIdx(idx)}
               className={`relative h-full px-4 md:px-5 py-5 md:py-6 border-b border-border cursor-pointer transition-colors duration-200 text-start ${
-                idx === 6 ? 'col-span-2' : ''
-              } ${activeIdx === idx ? 'bg-[#141414]' : 'hover:bg-[#0c0c0c]'}`}
+                activeIdx === idx ? 'bg-[#141414]' : 'hover:bg-[#0c0c0c]'
+              }`}
             >
               <span className="font-mono text-sm tabular-nums block mb-1 text-white/55">{tab.num}</span>
               <h3 className="text-lg md:text-xl font-normal tracking-tight leading-[1.2] mb-1 text-white">

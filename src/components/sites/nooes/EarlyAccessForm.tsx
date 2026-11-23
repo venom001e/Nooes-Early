@@ -1,39 +1,136 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
+import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { track } from '@vercel/analytics';
-import { requestEarlyAccess } from '@/app/early-access/actions';
-import type { WaitlistState } from '@/lib/early-access/types';
+import type { WaitlistFieldErrors, WaitlistState } from '@/lib/early-access/types';
 
 const initialState: WaitlistState = { status: 'idle', message: '' };
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const labelClass = 'block text-xs font-mono uppercase tracking-[0.14em] text-zinc-500';
 const fieldClass =
   'block w-full border-0 border-b border-border bg-transparent px-0 py-2 text-sm text-white placeholder:text-zinc-600 outline-none transition-colors focus:border-brand focus:ring-0';
 const errorClass = 'mt-2 text-xs font-mono text-red-400';
 
-export default function EarlyAccessForm() {
-  const [state, formAction, pending] = useActionState(requestEarlyAccess, initialState);
+type EarlyAccessFormProps = {
+  accessKey: string;
+};
 
-  useEffect(() => {
-    if (state.status === 'success') {
-      track('early_access_request');
+function fieldValue(formData: FormData, key: string): string {
+  const value = formData.get(key);
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+export default function EarlyAccessForm({ accessKey }: EarlyAccessFormProps) {
+  const [state, setState] = useState<WaitlistState>(initialState);
+  const [pending, setPending] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const email = fieldValue(formData, 'email').toLowerCase();
+    const name = fieldValue(formData, 'name');
+    const useCase = fieldValue(formData, 'use_case');
+
+    if (fieldValue(formData, 'company')) {
+      setState({ status: 'success', message: 'Request received.', email });
+      return;
     }
-  }, [state.status]);
+
+    const fieldErrors: WaitlistFieldErrors = {};
+    if (!EMAIL_PATTERN.test(email) || email.length > 254) {
+      fieldErrors.email = 'Enter a valid email address.';
+    }
+    if (name.length > 80) {
+      fieldErrors.name = 'Keep your name under 80 characters.';
+    }
+    if (useCase.length > 500) {
+      fieldErrors.useCase = 'Keep this under 500 characters.';
+    }
+    if (formData.get('consent') !== 'yes') {
+      fieldErrors.consent = 'Please agree to receive early access updates.';
+    }
+    if (Object.keys(fieldErrors).length > 0) {
+      setState({
+        status: 'error',
+        message: 'Please check the highlighted fields.',
+        email,
+        fieldErrors,
+      });
+      return;
+    }
+
+    if (!accessKey) {
+      setState({
+        status: 'error',
+        message: 'Early access requests are temporarily unavailable. Please try again later.',
+        email,
+      });
+      return;
+    }
+
+    setPending(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: name || 'Not provided',
+          email,
+          subject: 'New early access request — Nooes',
+          from_name: 'Nooes website',
+          message: useCase || 'No additional thoughts provided.',
+        }),
+      });
+
+      const result: unknown = await response.json().catch(() => null);
+      const succeeded =
+        response.ok &&
+        typeof result === 'object' &&
+        result !== null &&
+        'success' in result &&
+        result.success === true;
+
+      if (!succeeded) {
+        setState({
+          status: 'error',
+          message: 'We couldn’t send your request. Please try again.',
+          email,
+        });
+        return;
+      }
+
+      track('early_access_request');
+      setState({
+        status: 'success',
+        message: `Thanks — we received your early access request for ${email}.`,
+        email,
+      });
+      form.reset();
+    } catch {
+      setState({
+        status: 'error',
+        message: 'We couldn’t send your request. Please try again.',
+        email,
+      });
+    } finally {
+      setPending(false);
+    }
+  }
 
   if (state.status === 'success') {
     return (
       <div role="status" className="rounded border border-border bg-zinc-950 p-4 text-sm text-zinc-300">
         <p>{state.message}</p>
-        {state.devConfirmUrl && (
-          <p className="mt-3 break-all text-xs text-zinc-500">
-            Local development only:{' '}
-            <a href={state.devConfirmUrl} className="text-white underline underline-offset-4 hover:text-brand">
-              open the confirmation link
-            </a>
-          </p>
-        )}
         <p className="mt-4 text-xs text-zinc-500">
           <Link href="/" className="underline underline-offset-4 hover:text-white">
             Return home
@@ -44,7 +141,7 @@ export default function EarlyAccessForm() {
   }
 
   return (
-    <form action={formAction} className="mt-8 space-y-8">
+    <form onSubmit={handleSubmit} className="mt-8 space-y-8">
       {state.status === 'error' && state.message && (
         <p role="alert" className="rounded border border-red-500/30 bg-red-500/10 p-3 text-xs font-mono text-red-200">
           {state.message}
